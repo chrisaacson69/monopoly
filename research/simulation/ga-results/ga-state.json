@@ -1,0 +1,3181 @@
+{
+  "generation": 150,
+  "bestFitness": 0.4,
+  "bestGenome": {
+    "sellerShareThreshold": 0.3,
+    "mutualTradeRatio": 0.86,
+    "leaderPenaltyMultiplier": 1.8,
+    "dominanceThreshold": 1.61,
+    "dominancePenaltyMultiplier": 2.3,
+    "underdogBonus": 0.65,
+    "projectionHorizon": 62,
+    "discountRate": 0.015
+  },
+  "population": [
+    {
+      "genome": {
+        "sellerShareThreshold": 0.22,
+        "mutualTradeRatio": 0.91,
+        "leaderPenaltyMultiplier": 1.93,
+        "dominanceThreshold": 1.79,
+        "dominancePenaltyMultiplier": 2.14,
+        "underdogBonus": 0.71,
+        "projectionHorizon": 66,
+        "discountRate": 0.013
+      },
+      "fitness": 0.325,
+      "wins": 26,
+      "games": 80
+    },
+    {
+      "genome": {
+        "sellerShareThreshold": 0.35,
+        "mutualTradeRatio": 0.96,
+        "leaderPenaltyMultiplier": 2.02,
+        "dominanceThreshold": 1.79,
+        "dominancePenaltyMultiplier": 1.76,
+        "underdogBonus": 0.71,
+        "projectionHorizon": 68,
+        "discountRate": 0.013
+      },
+      "fitness": 0.3125,
+      "wins": 25,
+      "games": 80
+    },
+    {
+      "genome": {
+        "sellerShareThreshold": 0.27,
+        "mutualTradeRatio": 0.93,
+        "leaderPenaltyMultiplier": 1.94,
+        "dominanceThreshold": 1.84,
+        "dominancePenaltyMultiplier": 2.17,
+        "underdogBonus": 0.69,
+        "projectionHorizon": 65,
+        "discountRate": 0.014
+      },
+      "fitness": 0.3125,
+      "wins": 25,
+      "games": 80
+    },
+    {
+      "genome": {
+        "sellerShareThreshold": 0.24,
+        "mutualTradeRatio": 0.86,
+        "leaderPenaltyMultiplier": 1.8,
+        "dominanceThreshold": 1.63,
+        "dominancePenaltyMultiplier": 1.95,
+        "underdogBonus": 0.75,
+        "projectionHorizon": 60,
+        "discountRate": 0.012
+      },
+      "fitness": 0.3125,
+      "wins": 25,
+      "games": 80
+    },
+    {
+      "genome": {
+        "sellerShareThreshold": 0.2,
+        "mutualTradeRatio": 0.95,
+        "leaderPenaltyMultiplier": 2.15,
+        "dominanceThreshold": 1.88,
+        "dominancePenaltyMultiplier": 2.13,
+        "underdogBonus": 0.71,
+        "projectionHorizon": 68,
+        "discountRate": 0.01
+      },
+      "fitness": 0.3,
+      "wins": 24,
+      "games": 80
+    },
+    {
+      "genome": {
+        "sellerShareThreshold": 0.21,
+        "mutualTradeRatio": 0.95,
+        "leaderPenaltyMultiplier": 1.8,
+        "dominanceThreshold": 1.7,
+        "dominancePenaltyMultiplier": 1.5,
+        "underdogBonus": 0.73,
+        "projectionHorizon": 66,
+        "discountRate": 0.013
+      },
+      "fitness": 0.3,
+      "wins": 24,
+      "games": 80
+    },
+    {
+      "genome": {
+        "sellerShareThreshold": 0.24,
+        "mutualTradeRatio": 0.96,
+        "leaderPenaltyMultiplier": 1.84,
+        "dominanceThreshold": 1.7,
+        "dominancePenaltyMultiplier": 2.12,
+        "underdogBonus": 0.75,
+        "projectionHorizon": 66,
+        "discountRate": 0.012
+      },
+      "fitness": 0.3,
+      "wins": 24,
+      "games": 80
+    },
+    {
+      "genome": {
+        "sellerShareThreshold": 0.24,
+        "mutualTradeRatio": 0.95,
+        "leaderPenaltyMultiplier": 1.8,
+        "dominanceThreshold": 1.7,
+        "dominancePenaltyMultiplier": 1.65,
+        "underdogBonus": 0.73,
+        "projectionHorizon": 60,
+        "discountRate": 0.013
+      },
+      "fitness": 0.2875,
+      "wins": 23,
+      "games": 80
+    },
+    {
+      "genome": {
+        "sellerShareThreshold": 0.27,
+        "mutualTradeRatio": 0.93,
+        "leaderPenaltyMultiplier": 1.65,
+        "dominanceThreshold": 1.88,
+        "dominancePenaltyMultiplier": 1.76,
+        "underdogBonus": 0.71,
+        "projectionHorizon": 68,
+        "discountRate": 0.013
+      },
+      "fitness": 0.2875,
+      "wins": 23,
+      "games": 80
+    },
+    {
+      "genome": {
+        "sellerShareThreshold": 0.31,
+        "mutualTradeRatio": 0.94,
+        "leaderPenaltyMultiplier": 1.8,
+        "dominanceThreshold": 1.8,
+        "dominancePenaltyMultiplier": 1.74,
+        "underdogBonus": 0.69,
+        "projectionHorizon": 60,
+        "discountRate": 0.013
+      },
+      "fitness": 0.2875,
+      "wins": 23,
+      "games": 80
+    },
+    {
+      "genome": {
+        "sellerShareThreshold": 0.27,
+        "mutualTradeRatio": 0.9,
+        "leaderPenaltyMultiplier": 1.9,
+        "dominanceThreshold": 1.72,
+        "dominancePenaltyMultiplier": 2.11,
+        "underdogBonus": 0.75,
+        "projectionHorizon": 66,
+        "discountRate": 0.013
+      },
+      "fitness": 0.275,
+      "wins": 22,
+      "games": 80
+    },
+    {
+      "genome": {
+        "sellerShareThreshold": 0.24,
+        "mutualTradeRatio": 0.96,
+        "leaderPenaltyMultiplier": 1.95,
+        "dominanceThreshold": 1.7,
+        "dominancePenaltyMultiplier": 2.11,
+        "underdogBonus": 0.75,
+        "projectionHorizon": 66,
+        "discountRate": 0.012
+      },
+      "fitness": 0.2625,
+      "wins": 21,
+      "games": 80
+    },
+    {
+      "genome": {
+        "sellerShareThreshold": 0.24,
+        "mutualTradeRatio": 0.87,
+        "leaderPenaltyMultiplier": 2.15,
+        "dominanceThreshold": 1.81,
+        "dominancePenaltyMultiplier": 1.63,
+        "underdogBonus": 0.76,
+        "projectionHorizon": 66,
+        "discountRate": 0.013
+      },
+      "fitness": 0.2625,
+      "wins": 21,
+      "games": 80
+    },
+    {
+      "genome": {
+        "sellerShareThreshold": 0.27,
+        "mutualTradeRatio": 0.93,
+        "leaderPenaltyMultiplier": 1.99,
+        "dominanceThreshold": 1.81,
+        "dominancePenaltyMultiplier": 1.76,
+        "underdogBonus": 0.74,
+        "projectionHorizon": 67,
+        "discountRate": 0.013
+      },
+      "fitness": 0.2625,
+      "wins": 21,
+      "games": 80
+    },
+    {
+      "genome": {
+        "sellerShareThreshold": 0.29,
+        "mutualTradeRatio": 0.91,
+        "leaderPenaltyMultiplier": 1.91,
+        "dominanceThreshold": 1.87,
+        "dominancePenaltyMultiplier": 1.76,
+        "underdogBonus": 0.71,
+        "projectionHorizon": 66,
+        "discountRate": 0.012
+      },
+      "fitness": 0.2625,
+      "wins": 21,
+      "games": 80
+    },
+    {
+      "genome": {
+        "sellerShareThreshold": 0.22,
+        "mutualTradeRatio": 0.91,
+        "leaderPenaltyMultiplier": 1.96,
+        "dominanceThreshold": 1.76,
+        "dominancePenaltyMultiplier": 1.99,
+        "underdogBonus": 0.71,
+        "projectionHorizon": 67,
+        "discountRate": 0.013
+      },
+      "fitness": 0.2625,
+      "wins": 21,
+      "games": 80
+    },
+    {
+      "genome": {
+        "sellerShareThreshold": 0.32,
+        "mutualTradeRatio": 0.95,
+        "leaderPenaltyMultiplier": 1.84,
+        "dominanceThreshold": 1.79,
+        "dominancePenaltyMultiplier": 1.5,
+        "underdogBonus": 0.71,
+        "projectionHorizon": 68,
+        "discountRate": 0.013
+      },
+      "fitness": 0.2625,
+      "wins": 21,
+      "games": 80
+    },
+    {
+      "genome": {
+        "sellerShareThreshold": 0.24,
+        "mutualTradeRatio": 0.96,
+        "leaderPenaltyMultiplier": 1.84,
+        "dominanceThreshold": 1.7,
+        "dominancePenaltyMultiplier": 2.12,
+        "underdogBonus": 0.75,
+        "projectionHorizon": 66,
+        "discountRate": 0.012
+      },
+      "fitness": 0.25,
+      "wins": 20,
+      "games": 80
+    },
+    {
+      "genome": {
+        "sellerShareThreshold": 0.26,
+        "mutualTradeRatio": 0.93,
+        "leaderPenaltyMultiplier": 1.84,
+        "dominanceThreshold": 1.76,
+        "dominancePenaltyMultiplier": 2.05,
+        "underdogBonus": 0.73,
+        "projectionHorizon": 66,
+        "discountRate": 0.015
+      },
+      "fitness": 0.25,
+      "wins": 20,
+      "games": 80
+    },
+    {
+      "genome": {
+        "sellerShareThreshold": 0.24,
+        "mutualTradeRatio": 0.95,
+        "leaderPenaltyMultiplier": 1.8,
+        "dominanceThreshold": 1.77,
+        "dominancePenaltyMultiplier": 1.65,
+        "underdogBonus": 0.73,
+        "projectionHorizon": 60,
+        "discountRate": 0.013
+      },
+      "fitness": 0.25,
+      "wins": 20,
+      "games": 80
+    },
+    {
+      "genome": {
+        "sellerShareThreshold": 0.28,
+        "mutualTradeRatio": 0.98,
+        "leaderPenaltyMultiplier": 2.15,
+        "dominanceThreshold": 1.81,
+        "dominancePenaltyMultiplier": 2.11,
+        "underdogBonus": 0.72,
+        "projectionHorizon": 67,
+        "discountRate": 0.016
+      },
+      "fitness": 0.2375,
+      "wins": 19,
+      "games": 80
+    },
+    {
+      "genome": {
+        "sellerShareThreshold": 0.22,
+        "mutualTradeRatio": 0.91,
+        "leaderPenaltyMultiplier": 1.92,
+        "dominanceThreshold": 1.76,
+        "dominancePenaltyMultiplier": 2.06,
+        "underdogBonus": 0.75,
+        "projectionHorizon": 66,
+        "discountRate": 0.011
+      },
+      "fitness": 0.2375,
+      "wins": 19,
+      "games": 80
+    },
+    {
+      "genome": {
+        "sellerShareThreshold": 0.16,
+        "mutualTradeRatio": 0.95,
+        "leaderPenaltyMultiplier": 1.94,
+        "dominanceThreshold": 1.76,
+        "dominancePenaltyMultiplier": 1.5,
+        "underdogBonus": 0.73,
+        "projectionHorizon": 66,
+        "discountRate": 0.013
+      },
+      "fitness": 0.2375,
+      "wins": 19,
+      "games": 80
+    },
+    {
+      "genome": {
+        "sellerShareThreshold": 0.24,
+        "mutualTradeRatio": 0.95,
+        "leaderPenaltyMultiplier": 1.81,
+        "dominanceThreshold": 1.71,
+        "dominancePenaltyMultiplier": 1.74,
+        "underdogBonus": 0.73,
+        "projectionHorizon": 60,
+        "discountRate": 0.013
+      },
+      "fitness": 0.2375,
+      "wins": 19,
+      "games": 80
+    },
+    {
+      "genome": {
+        "sellerShareThreshold": 0.2,
+        "mutualTradeRatio": 0.91,
+        "leaderPenaltyMultiplier": 2.03,
+        "dominanceThreshold": 1.86,
+        "dominancePenaltyMultiplier": 1.99,
+        "underdogBonus": 0.83,
+        "projectionHorizon": 59,
+        "discountRate": 0.016
+      },
+      "fitness": 0.2375,
+      "wins": 19,
+      "games": 80
+    },
+    {
+      "genome": {
+        "sellerShareThreshold": 0.32,
+        "mutualTradeRatio": 0.96,
+        "leaderPenaltyMultiplier": 2.15,
+        "dominanceThreshold": 1.79,
+        "dominancePenaltyMultiplier": 2.13,
+        "underdogBonus": 0.71,
+        "projectionHorizon": 68,
+        "discountRate": 0.016
+      },
+      "fitness": 0.2375,
+      "wins": 19,
+      "games": 80
+    },
+    {
+      "genome": {
+        "sellerShareThreshold": 0.2,
+        "mutualTradeRatio": 0.95,
+        "leaderPenaltyMultiplier": 1.8,
+        "dominanceThreshold": 1.75,
+        "dominancePenaltyMultiplier": 2.52,
+        "underdogBonus": 0.73,
+        "projectionHorizon": 68,
+        "discountRate": 0.012
+      },
+      "fitness": 0.2375,
+      "wins": 19,
+      "games": 80
+    },
+    {
+      "genome": {
+        "sellerShareThreshold": 0.24,
+        "mutualTradeRatio": 0.88,
+        "leaderPenaltyMultiplier": 1.84,
+        "dominanceThreshold": 1.81,
+        "dominancePenaltyMultiplier": 1.63,
+        "underdogBonus": 0.7,
+        "projectionHorizon": 60,
+        "discountRate": 0.013
+      },
+      "fitness": 0.2375,
+      "wins": 19,
+      "games": 80
+    },
+    {
+      "genome": {
+        "sellerShareThreshold": 0.25,
+        "mutualTradeRatio": 0.93,
+        "leaderPenaltyMultiplier": 1.94,
+        "dominanceThreshold": 1.78,
+        "dominancePenaltyMultiplier": 1.76,
+        "underdogBonus": 0.74,
+        "projectionHorizon": 65,
+        "discountRate": 0.013
+      },
+      "fitness": 0.225,
+      "wins": 18,
+      "games": 80
+    },
+    {
+      "genome": {
+        "sellerShareThreshold": 0.32,
+        "mutualTradeRatio": 0.91,
+        "leaderPenaltyMultiplier": 1.97,
+        "dominanceThreshold": 1.8,
+        "dominancePenaltyMultiplier": 1.75,
+        "underdogBonus": 0.75,
+        "projectionHorizon": 66,
+        "discountRate": 0.015
+      },
+      "fitness": 0.225,
+      "wins": 18,
+      "games": 80
+    },
+    {
+      "genome": {
+        "sellerShareThreshold": 0.25,
+        "mutualTradeRatio": 0.93,
+        "leaderPenaltyMultiplier": 2.01,
+        "dominanceThreshold": 1.75,
+        "dominancePenaltyMultiplier": 1.59,
+        "underdogBonus": 0.68,
+        "projectionHorizon": 67,
+        "discountRate": 0.013
+      },
+      "fitness": 0.225,
+      "wins": 18,
+      "games": 80
+    },
+    {
+      "genome": {
+        "sellerShareThreshold": 0.25,
+        "mutualTradeRatio": 0.93,
+        "leaderPenaltyMultiplier": 1.91,
+        "dominanceThreshold": 1.78,
+        "dominancePenaltyMultiplier": 1.59,
+        "underdogBonus": 0.74,
+        "projectionHorizon": 67,
+        "discountRate": 0.012
+      },
+      "fitness": 0.225,
+      "wins": 18,
+      "games": 80
+    },
+    {
+      "genome": {
+        "sellerShareThreshold": 0.25,
+        "mutualTradeRatio": 0.9,
+        "leaderPenaltyMultiplier": 1.94,
+        "dominanceThreshold": 1.78,
+        "dominancePenaltyMultiplier": 1.76,
+        "underdogBonus": 0.74,
+        "projectionHorizon": 67,
+        "discountRate": 0.013
+      },
+      "fitness": 0.2125,
+      "wins": 17,
+      "games": 80
+    },
+    {
+      "genome": {
+        "sellerShareThreshold": 0.2,
+        "mutualTradeRatio": 0.95,
+        "leaderPenaltyMultiplier": 1.8,
+        "dominanceThreshold": 1.7,
+        "dominancePenaltyMultiplier": 1.72,
+        "underdogBonus": 0.77,
+        "projectionHorizon": 66,
+        "discountRate": 0.013
+      },
+      "fitness": 0.2125,
+      "wins": 17,
+      "games": 80
+    },
+    {
+      "genome": {
+        "sellerShareThreshold": 0.27,
+        "mutualTradeRatio": 0.94,
+        "leaderPenaltyMultiplier": 2.11,
+        "dominanceThreshold": 1.71,
+        "dominancePenaltyMultiplier": 1.92,
+        "underdogBonus": 0.75,
+        "projectionHorizon": 67,
+        "discountRate": 0.01
+      },
+      "fitness": 0.2125,
+      "wins": 17,
+      "games": 80
+    },
+    {
+      "genome": {
+        "sellerShareThreshold": 0.2,
+        "mutualTradeRatio": 0.95,
+        "leaderPenaltyMultiplier": 2.15,
+        "dominanceThreshold": 1.75,
+        "dominancePenaltyMultiplier": 1.59,
+        "underdogBonus": 0.71,
+        "projectionHorizon": 68,
+        "discountRate": 0.01
+      },
+      "fitness": 0.2,
+      "wins": 16,
+      "games": 80
+    },
+    {
+      "genome": {
+        "sellerShareThreshold": 0.32,
+        "mutualTradeRatio": 0.96,
+        "leaderPenaltyMultiplier": 1.94,
+        "dominanceThreshold": 1.68,
+        "dominancePenaltyMultiplier": 1.77,
+        "underdogBonus": 0.75,
+        "projectionHorizon": 66,
+        "discountRate": 0.014
+      },
+      "fitness": 0.2,
+      "wins": 16,
+      "games": 80
+    },
+    {
+      "genome": {
+        "sellerShareThreshold": 0.32,
+        "mutualTradeRatio": 0.93,
+        "leaderPenaltyMultiplier": 2.15,
+        "dominanceThreshold": 1.7,
+        "dominancePenaltyMultiplier": 1.59,
+        "underdogBonus": 0.68,
+        "projectionHorizon": 66,
+        "discountRate": 0.014
+      },
+      "fitness": 0.2,
+      "wins": 16,
+      "games": 80
+    },
+    {
+      "genome": {
+        "sellerShareThreshold": 0.25,
+        "mutualTradeRatio": 0.9,
+        "leaderPenaltyMultiplier": 1.94,
+        "dominanceThreshold": 1.78,
+        "dominancePenaltyMultiplier": 1.76,
+        "underdogBonus": 0.76,
+        "projectionHorizon": 67,
+        "discountRate": 0.015
+      },
+      "fitness": 0.2,
+      "wins": 16,
+      "games": 80
+    },
+    {
+      "genome": {
+        "sellerShareThreshold": 0.2,
+        "mutualTradeRatio": 0.91,
+        "leaderPenaltyMultiplier": 1.92,
+        "dominanceThreshold": 1.76,
+        "dominancePenaltyMultiplier": 2.14,
+        "underdogBonus": 0.76,
+        "projectionHorizon": 66,
+        "discountRate": 0.015
+      },
+      "fitness": 0.1875,
+      "wins": 15,
+      "games": 80
+    },
+    {
+      "genome": {
+        "sellerShareThreshold": 0.25,
+        "mutualTradeRatio": 0.86,
+        "leaderPenaltyMultiplier": 2.15,
+        "dominanceThreshold": 1.79,
+        "dominancePenaltyMultiplier": 2.12,
+        "underdogBonus": 0.71,
+        "projectionHorizon": 68,
+        "discountRate": 0.011
+      },
+      "fitness": 0.1875,
+      "wins": 15,
+      "games": 80
+    },
+    {
+      "genome": {
+        "sellerShareThreshold": 0.25,
+        "mutualTradeRatio": 0.98,
+        "leaderPenaltyMultiplier": 2.28,
+        "dominanceThreshold": 1.81,
+        "dominancePenaltyMultiplier": 2.13,
+        "underdogBonus": 0.71,
+        "projectionHorizon": 68,
+        "discountRate": 0.013
+      },
+      "fitness": 0.1875,
+      "wins": 15,
+      "games": 80
+    },
+    {
+      "genome": {
+        "sellerShareThreshold": 0.27,
+        "mutualTradeRatio": 0.93,
+        "leaderPenaltyMultiplier": 1.94,
+        "dominanceThreshold": 1.83,
+        "dominancePenaltyMultiplier": 2.14,
+        "underdogBonus": 0.77,
+        "projectionHorizon": 69,
+        "discountRate": 0.013
+      },
+      "fitness": 0.1875,
+      "wins": 15,
+      "games": 80
+    },
+    {
+      "genome": {
+        "sellerShareThreshold": 0.24,
+        "mutualTradeRatio": 0.92,
+        "leaderPenaltyMultiplier": 1.99,
+        "dominanceThreshold": 1.69,
+        "dominancePenaltyMultiplier": 1.64,
+        "underdogBonus": 0.73,
+        "projectionHorizon": 67,
+        "discountRate": 0.013
+      },
+      "fitness": 0.1625,
+      "wins": 13,
+      "games": 80
+    },
+    {
+      "genome": {
+        "sellerShareThreshold": 0.27,
+        "mutualTradeRatio": 0.95,
+        "leaderPenaltyMultiplier": 2.15,
+        "dominanceThreshold": 1.8,
+        "dominancePenaltyMultiplier": 1.86,
+        "underdogBonus": 0.74,
+        "projectionHorizon": 66,
+        "discountRate": 0.013
+      },
+      "fitness": 0.1625,
+      "wins": 13,
+      "games": 80
+    },
+    {
+      "genome": {
+        "sellerShareThreshold": 0.24,
+        "mutualTradeRatio": 0.95,
+        "leaderPenaltyMultiplier": 1.8,
+        "dominanceThreshold": 1.7,
+        "dominancePenaltyMultiplier": 1.65,
+        "underdogBonus": 0.73,
+        "projectionHorizon": 60,
+        "discountRate": 0.013
+      },
+      "fitness": 0.15,
+      "wins": 12,
+      "games": 80
+    },
+    {
+      "genome": {
+        "sellerShareThreshold": 0.28,
+        "mutualTradeRatio": 0.96,
+        "leaderPenaltyMultiplier": 2.01,
+        "dominanceThreshold": 1.74,
+        "dominancePenaltyMultiplier": 1.81,
+        "underdogBonus": 0.73,
+        "projectionHorizon": 68,
+        "discountRate": 0.013
+      },
+      "fitness": 0.15,
+      "wins": 12,
+      "games": 80
+    },
+    {
+      "genome": {
+        "sellerShareThreshold": 0.27,
+        "mutualTradeRatio": 0.91,
+        "leaderPenaltyMultiplier": 2.01,
+        "dominanceThreshold": 1.72,
+        "dominancePenaltyMultiplier": 2.11,
+        "underdogBonus": 0.75,
+        "projectionHorizon": 66,
+        "discountRate": 0.011
+      },
+      "fitness": 0.15,
+      "wins": 12,
+      "games": 80
+    },
+    {
+      "genome": {
+        "sellerShareThreshold": 0.2,
+        "mutualTradeRatio": 0.98,
+        "leaderPenaltyMultiplier": 1.76,
+        "dominanceThreshold": 1.7,
+        "dominancePenaltyMultiplier": 2.01,
+        "underdogBonus": 0.75,
+        "projectionHorizon": 66,
+        "discountRate": 0.013
+      },
+      "fitness": 0.1375,
+      "wins": 11,
+      "games": 80
+    },
+    {
+      "genome": {
+        "sellerShareThreshold": 0.21,
+        "mutualTradeRatio": 0.95,
+        "leaderPenaltyMultiplier": 1.8,
+        "dominanceThreshold": 1.7,
+        "dominancePenaltyMultiplier": 1.5,
+        "underdogBonus": 0.7,
+        "projectionHorizon": 66,
+        "discountRate": 0.013
+      },
+      "fitness": 0.125,
+      "wins": 10,
+      "games": 80
+    }
+  ],
+  "history": [
+    {
+      "generation": 0,
+      "bestFitness": 0.35,
+      "avgFitness": 0.22875,
+      "bestGenome": {
+        "sellerShareThreshold": 0.47,
+        "mutualTradeRatio": 0.92,
+        "leaderPenaltyMultiplier": 1.67,
+        "dominanceThreshold": 1.79,
+        "dominancePenaltyMultiplier": 1.95,
+        "underdogBonus": 0.7,
+        "projectionHorizon": 61,
+        "discountRate": 0.013
+      },
+      "time": 143.445
+    },
+    {
+      "generation": 1,
+      "bestFitness": 0.3,
+      "avgFitness": 0.225,
+      "bestGenome": {
+        "sellerShareThreshold": 0.46,
+        "mutualTradeRatio": 0.84,
+        "leaderPenaltyMultiplier": 2.27,
+        "dominanceThreshold": 1.48,
+        "dominancePenaltyMultiplier": 1.51,
+        "underdogBonus": 0.78,
+        "projectionHorizon": 69,
+        "discountRate": 0.017
+      },
+      "time": 147.094
+    },
+    {
+      "generation": 2,
+      "bestFitness": 0.3375,
+      "avgFitness": 0.23299999999999993,
+      "bestGenome": {
+        "sellerShareThreshold": 0.48,
+        "mutualTradeRatio": 0.86,
+        "leaderPenaltyMultiplier": 2.48,
+        "dominanceThreshold": 1.51,
+        "dominancePenaltyMultiplier": 2.37,
+        "underdogBonus": 0.79,
+        "projectionHorizon": 67,
+        "discountRate": 0.021
+      },
+      "time": 121.731
+    },
+    {
+      "generation": 3,
+      "bestFitness": 0.35,
+      "avgFitness": 0.22349999999999998,
+      "bestGenome": {
+        "sellerShareThreshold": 0.5,
+        "mutualTradeRatio": 0.94,
+        "leaderPenaltyMultiplier": 1.98,
+        "dominanceThreshold": 1.6,
+        "dominancePenaltyMultiplier": 2.38,
+        "underdogBonus": 0.98,
+        "projectionHorizon": 60,
+        "discountRate": 0.017
+      },
+      "time": 151.619
+    },
+    {
+      "generation": 4,
+      "bestFitness": 0.35,
+      "avgFitness": 0.24574999999999997,
+      "bestGenome": {
+        "sellerShareThreshold": 0.26,
+        "mutualTradeRatio": 0.89,
+        "leaderPenaltyMultiplier": 1.55,
+        "dominanceThreshold": 1.6,
+        "dominancePenaltyMultiplier": 1.99,
+        "underdogBonus": 0.68,
+        "projectionHorizon": 72,
+        "discountRate": 0.013
+      },
+      "time": 136.679
+    },
+    {
+      "generation": 5,
+      "bestFitness": 0.3125,
+      "avgFitness": 0.23299999999999993,
+      "bestGenome": {
+        "sellerShareThreshold": 0.5,
+        "mutualTradeRatio": 0.89,
+        "leaderPenaltyMultiplier": 2.21,
+        "dominanceThreshold": 1.58,
+        "dominancePenaltyMultiplier": 2.38,
+        "underdogBonus": 1,
+        "projectionHorizon": 60,
+        "discountRate": 0.017
+      },
+      "time": 136.156
+    },
+    {
+      "generation": 6,
+      "bestFitness": 0.35,
+      "avgFitness": 0.24174999999999996,
+      "bestGenome": {
+        "sellerShareThreshold": 0.46,
+        "mutualTradeRatio": 0.84,
+        "leaderPenaltyMultiplier": 2.21,
+        "dominanceThreshold": 1.58,
+        "dominancePenaltyMultiplier": 2.38,
+        "underdogBonus": 1,
+        "projectionHorizon": 64,
+        "discountRate": 0.017
+      },
+      "time": 144.842
+    },
+    {
+      "generation": 7,
+      "bestFitness": 0.3375,
+      "avgFitness": 0.229,
+      "bestGenome": {
+        "sellerShareThreshold": 0.35,
+        "mutualTradeRatio": 0.84,
+        "leaderPenaltyMultiplier": 2.16,
+        "dominanceThreshold": 1.45,
+        "dominancePenaltyMultiplier": 1.84,
+        "underdogBonus": 0.92,
+        "projectionHorizon": 72,
+        "discountRate": 0.017
+      },
+      "time": 184.898
+    },
+    {
+      "generation": 8,
+      "bestFitness": 0.325,
+      "avgFitness": 0.23324999999999987,
+      "bestGenome": {
+        "sellerShareThreshold": 0.35,
+        "mutualTradeRatio": 0.84,
+        "leaderPenaltyMultiplier": 2.16,
+        "dominanceThreshold": 1.45,
+        "dominancePenaltyMultiplier": 1.84,
+        "underdogBonus": 0.92,
+        "projectionHorizon": 72,
+        "discountRate": 0.017
+      },
+      "time": 137.163
+    },
+    {
+      "generation": 9,
+      "bestFitness": 0.3375,
+      "avgFitness": 0.22974999999999987,
+      "bestGenome": {
+        "sellerShareThreshold": 0.35,
+        "mutualTradeRatio": 0.84,
+        "leaderPenaltyMultiplier": 2.21,
+        "dominanceThreshold": 1.48,
+        "dominancePenaltyMultiplier": 1.8,
+        "underdogBonus": 0.96,
+        "projectionHorizon": 72,
+        "discountRate": 0.01
+      },
+      "time": 144.848
+    },
+    {
+      "generation": 10,
+      "bestFitness": 0.375,
+      "avgFitness": 0.23424999999999993,
+      "bestGenome": {
+        "sellerShareThreshold": 0.32,
+        "mutualTradeRatio": 0.83,
+        "leaderPenaltyMultiplier": 1.65,
+        "dominanceThreshold": 1.46,
+        "dominancePenaltyMultiplier": 2.04,
+        "underdogBonus": 0.87,
+        "projectionHorizon": 65,
+        "discountRate": 0.021
+      },
+      "time": 175.602
+    },
+    {
+      "generation": 11,
+      "bestFitness": 0.3375,
+      "avgFitness": 0.2342499999999999,
+      "bestGenome": {
+        "sellerShareThreshold": 0.35,
+        "mutualTradeRatio": 0.83,
+        "leaderPenaltyMultiplier": 1.67,
+        "dominanceThreshold": 1.41,
+        "dominancePenaltyMultiplier": 1.8,
+        "underdogBonus": 0.96,
+        "projectionHorizon": 71,
+        "discountRate": 0.021
+      },
+      "time": 135.654
+    },
+    {
+      "generation": 12,
+      "bestFitness": 0.325,
+      "avgFitness": 0.2364999999999999,
+      "bestGenome": {
+        "sellerShareThreshold": 0.35,
+        "mutualTradeRatio": 0.84,
+        "leaderPenaltyMultiplier": 2.17,
+        "dominanceThreshold": 1.57,
+        "dominancePenaltyMultiplier": 2.38,
+        "underdogBonus": 0.61,
+        "projectionHorizon": 72,
+        "discountRate": 0.017
+      },
+      "time": 151.577
+    },
+    {
+      "generation": 13,
+      "bestFitness": 0.325,
+      "avgFitness": 0.22024999999999997,
+      "bestGenome": {
+        "sellerShareThreshold": 0.49,
+        "mutualTradeRatio": 0.83,
+        "leaderPenaltyMultiplier": 1.81,
+        "dominanceThreshold": 1.48,
+        "dominancePenaltyMultiplier": 1.83,
+        "underdogBonus": 0.76,
+        "projectionHorizon": 65,
+        "discountRate": 0.01
+      },
+      "time": 158.24
+    },
+    {
+      "generation": 14,
+      "bestFitness": 0.325,
+      "avgFitness": 0.23699999999999993,
+      "bestGenome": {
+        "sellerShareThreshold": 0.31,
+        "mutualTradeRatio": 0.87,
+        "leaderPenaltyMultiplier": 1.57,
+        "dominanceThreshold": 1.51,
+        "dominancePenaltyMultiplier": 2.14,
+        "underdogBonus": 0.99,
+        "projectionHorizon": 70,
+        "discountRate": 0.017
+      },
+      "time": 132.562
+    },
+    {
+      "generation": 15,
+      "bestFitness": 0.35,
+      "avgFitness": 0.226,
+      "bestGenome": {
+        "sellerShareThreshold": 0.37,
+        "mutualTradeRatio": 0.84,
+        "leaderPenaltyMultiplier": 1.94,
+        "dominanceThreshold": 1.76,
+        "dominancePenaltyMultiplier": 1.77,
+        "underdogBonus": 0.61,
+        "projectionHorizon": 64,
+        "discountRate": 0.014
+      },
+      "time": 148.031
+    },
+    {
+      "generation": 16,
+      "bestFitness": 0.325,
+      "avgFitness": 0.2487500000000001,
+      "bestGenome": {
+        "sellerShareThreshold": 0.47,
+        "mutualTradeRatio": 0.84,
+        "leaderPenaltyMultiplier": 2.21,
+        "dominanceThreshold": 1.64,
+        "dominancePenaltyMultiplier": 1.77,
+        "underdogBonus": 0.76,
+        "projectionHorizon": 69,
+        "discountRate": 0.016
+      },
+      "time": 134.079
+    },
+    {
+      "generation": 17,
+      "bestFitness": 0.3625,
+      "avgFitness": 0.23599999999999988,
+      "bestGenome": {
+        "sellerShareThreshold": 0.35,
+        "mutualTradeRatio": 0.84,
+        "leaderPenaltyMultiplier": 2.13,
+        "dominanceThreshold": 1.61,
+        "dominancePenaltyMultiplier": 2.2,
+        "underdogBonus": 0.78,
+        "projectionHorizon": 62,
+        "discountRate": 0.011
+      },
+      "time": 136.064
+    },
+    {
+      "generation": 18,
+      "bestFitness": 0.35,
+      "avgFitness": 0.24024999999999988,
+      "bestGenome": {
+        "sellerShareThreshold": 0.36,
+        "mutualTradeRatio": 0.76,
+        "leaderPenaltyMultiplier": 1.8,
+        "dominanceThreshold": 1.73,
+        "dominancePenaltyMultiplier": 2.06,
+        "underdogBonus": 0.92,
+        "projectionHorizon": 62,
+        "discountRate": 0.016
+      },
+      "time": 150.761
+    },
+    {
+      "generation": 19,
+      "bestFitness": 0.3375,
+      "avgFitness": 0.2385,
+      "bestGenome": {
+        "sellerShareThreshold": 0.37,
+        "mutualTradeRatio": 0.84,
+        "leaderPenaltyMultiplier": 2.13,
+        "dominanceThreshold": 1.76,
+        "dominancePenaltyMultiplier": 1.77,
+        "underdogBonus": 0.64,
+        "projectionHorizon": 66,
+        "discountRate": 0.019
+      },
+      "time": 139.121
+    },
+    {
+      "generation": 20,
+      "bestFitness": 0.325,
+      "avgFitness": 0.23149999999999993,
+      "bestGenome": {
+        "sellerShareThreshold": 0.36,
+        "mutualTradeRatio": 0.75,
+        "leaderPenaltyMultiplier": 1.8,
+        "dominanceThreshold": 1.65,
+        "dominancePenaltyMultiplier": 2.2,
+        "underdogBonus": 0.92,
+        "projectionHorizon": 53,
+        "discountRate": 0.016
+      },
+      "time": 150.737
+    },
+    {
+      "generation": 21,
+      "bestFitness": 0.4,
+      "avgFitness": 0.24025000000000005,
+      "bestGenome": {
+        "sellerShareThreshold": 0.3,
+        "mutualTradeRatio": 0.86,
+        "leaderPenaltyMultiplier": 1.8,
+        "dominanceThreshold": 1.61,
+        "dominancePenaltyMultiplier": 2.3,
+        "underdogBonus": 0.65,
+        "projectionHorizon": 62,
+        "discountRate": 0.015
+      },
+      "time": 144.24
+    },
+    {
+      "generation": 22,
+      "bestFitness": 0.3875,
+      "avgFitness": 0.24075,
+      "bestGenome": {
+        "sellerShareThreshold": 0.28,
+        "mutualTradeRatio": 0.86,
+        "leaderPenaltyMultiplier": 2.14,
+        "dominanceThreshold": 1.61,
+        "dominancePenaltyMultiplier": 1.94,
+        "underdogBonus": 0.65,
+        "projectionHorizon": 64,
+        "discountRate": 0.014
+      },
+      "time": 121.233
+    },
+    {
+      "generation": 23,
+      "bestFitness": 0.3625,
+      "avgFitness": 0.24025,
+      "bestGenome": {
+        "sellerShareThreshold": 0.35,
+        "mutualTradeRatio": 0.78,
+        "leaderPenaltyMultiplier": 2.04,
+        "dominanceThreshold": 1.61,
+        "dominancePenaltyMultiplier": 2.2,
+        "underdogBonus": 0.92,
+        "projectionHorizon": 66,
+        "discountRate": 0.015
+      },
+      "time": 124.49
+    },
+    {
+      "generation": 24,
+      "bestFitness": 0.325,
+      "avgFitness": 0.22949999999999984,
+      "bestGenome": {
+        "sellerShareThreshold": 0.27,
+        "mutualTradeRatio": 0.85,
+        "leaderPenaltyMultiplier": 1.72,
+        "dominanceThreshold": 1.6,
+        "dominancePenaltyMultiplier": 2.2,
+        "underdogBonus": 0.92,
+        "projectionHorizon": 57,
+        "discountRate": 0.013
+      },
+      "time": 146.601
+    },
+    {
+      "generation": 25,
+      "bestFitness": 0.3375,
+      "avgFitness": 0.22424999999999995,
+      "bestGenome": {
+        "sellerShareThreshold": 0.36,
+        "mutualTradeRatio": 0.85,
+        "leaderPenaltyMultiplier": 2.04,
+        "dominanceThreshold": 1.76,
+        "dominancePenaltyMultiplier": 1.5,
+        "underdogBonus": 0.64,
+        "projectionHorizon": 73,
+        "discountRate": 0.01
+      },
+      "time": 137.883
+    },
+    {
+      "generation": 26,
+      "bestFitness": 0.325,
+      "avgFitness": 0.23499999999999993,
+      "bestGenome": {
+        "sellerShareThreshold": 0.3,
+        "mutualTradeRatio": 0.86,
+        "leaderPenaltyMultiplier": 1.92,
+        "dominanceThreshold": 1.59,
+        "dominancePenaltyMultiplier": 2.42,
+        "underdogBonus": 0.65,
+        "projectionHorizon": 62,
+        "discountRate": 0.02
+      },
+      "time": 144.016
+    },
+    {
+      "generation": 27,
+      "bestFitness": 0.35,
+      "avgFitness": 0.24175000000000002,
+      "bestGenome": {
+        "sellerShareThreshold": 0.3,
+        "mutualTradeRatio": 0.67,
+        "leaderPenaltyMultiplier": 2.04,
+        "dominanceThreshold": 1.63,
+        "dominancePenaltyMultiplier": 1.55,
+        "underdogBonus": 0.69,
+        "projectionHorizon": 69,
+        "discountRate": 0.01
+      },
+      "time": 140.538
+    },
+    {
+      "generation": 28,
+      "bestFitness": 0.3875,
+      "avgFitness": 0.24375,
+      "bestGenome": {
+        "sellerShareThreshold": 0.28,
+        "mutualTradeRatio": 0.88,
+        "leaderPenaltyMultiplier": 1.81,
+        "dominanceThreshold": 1.58,
+        "dominancePenaltyMultiplier": 2.42,
+        "underdogBonus": 0.7,
+        "projectionHorizon": 62,
+        "discountRate": 0.02
+      },
+      "time": 133.033
+    },
+    {
+      "generation": 29,
+      "bestFitness": 0.3375,
+      "avgFitness": 0.2262499999999999,
+      "bestGenome": {
+        "sellerShareThreshold": 0.31,
+        "mutualTradeRatio": 0.85,
+        "leaderPenaltyMultiplier": 2.14,
+        "dominanceThreshold": 1.6,
+        "dominancePenaltyMultiplier": 1.82,
+        "underdogBonus": 0.91,
+        "projectionHorizon": 64,
+        "discountRate": 0.021
+      },
+      "time": 144.013
+    },
+    {
+      "generation": 30,
+      "bestFitness": 0.325,
+      "avgFitness": 0.23299999999999993,
+      "bestGenome": {
+        "sellerShareThreshold": 0.35,
+        "mutualTradeRatio": 0.67,
+        "leaderPenaltyMultiplier": 2.04,
+        "dominanceThreshold": 1.63,
+        "dominancePenaltyMultiplier": 1.51,
+        "underdogBonus": 0.69,
+        "projectionHorizon": 66,
+        "discountRate": 0.021
+      },
+      "time": 119.077
+    },
+    {
+      "generation": 31,
+      "bestFitness": 0.3625,
+      "avgFitness": 0.23624999999999996,
+      "bestGenome": {
+        "sellerShareThreshold": 0.3,
+        "mutualTradeRatio": 0.67,
+        "leaderPenaltyMultiplier": 2.04,
+        "dominanceThreshold": 1.68,
+        "dominancePenaltyMultiplier": 1.58,
+        "underdogBonus": 0.72,
+        "projectionHorizon": 65,
+        "discountRate": 0.01
+      },
+      "time": 129.945
+    },
+    {
+      "generation": 32,
+      "bestFitness": 0.35,
+      "avgFitness": 0.24075000000000002,
+      "bestGenome": {
+        "sellerShareThreshold": 0.3,
+        "mutualTradeRatio": 0.71,
+        "leaderPenaltyMultiplier": 1.94,
+        "dominanceThreshold": 1.58,
+        "dominancePenaltyMultiplier": 2.2,
+        "underdogBonus": 0.98,
+        "projectionHorizon": 66,
+        "discountRate": 0.01
+      },
+      "time": 120.703
+    },
+    {
+      "generation": 33,
+      "bestFitness": 0.325,
+      "avgFitness": 0.2377499999999999,
+      "bestGenome": {
+        "sellerShareThreshold": 0.28,
+        "mutualTradeRatio": 0.86,
+        "leaderPenaltyMultiplier": 1.91,
+        "dominanceThreshold": 1.58,
+        "dominancePenaltyMultiplier": 2.26,
+        "underdogBonus": 0.98,
+        "projectionHorizon": 62,
+        "discountRate": 0.018
+      },
+      "time": 148.486
+    },
+    {
+      "generation": 34,
+      "bestFitness": 0.3625,
+      "avgFitness": 0.23925000000000005,
+      "bestGenome": {
+        "sellerShareThreshold": 0.29,
+        "mutualTradeRatio": 0.82,
+        "leaderPenaltyMultiplier": 1.86,
+        "dominanceThreshold": 1.56,
+        "dominancePenaltyMultiplier": 1.92,
+        "underdogBonus": 0.69,
+        "projectionHorizon": 60,
+        "discountRate": 0.022
+      },
+      "time": 120.587
+    },
+    {
+      "generation": 35,
+      "bestFitness": 0.3375,
+      "avgFitness": 0.22549999999999992,
+      "bestGenome": {
+        "sellerShareThreshold": 0.3,
+        "mutualTradeRatio": 0.82,
+        "leaderPenaltyMultiplier": 1.8,
+        "dominanceThreshold": 1.56,
+        "dominancePenaltyMultiplier": 1.62,
+        "underdogBonus": 0.83,
+        "projectionHorizon": 59,
+        "discountRate": 0.022
+      },
+      "time": 137.922
+    },
+    {
+      "generation": 36,
+      "bestFitness": 0.35,
+      "avgFitness": 0.23624999999999993,
+      "bestGenome": {
+        "sellerShareThreshold": 0.31,
+        "mutualTradeRatio": 0.67,
+        "leaderPenaltyMultiplier": 1.77,
+        "dominanceThreshold": 1.58,
+        "dominancePenaltyMultiplier": 2,
+        "underdogBonus": 0.73,
+        "projectionHorizon": 65,
+        "discountRate": 0.01
+      },
+      "time": 147.399
+    },
+    {
+      "generation": 37,
+      "bestFitness": 0.3375,
+      "avgFitness": 0.23874999999999996,
+      "bestGenome": {
+        "sellerShareThreshold": 0.31,
+        "mutualTradeRatio": 0.76,
+        "leaderPenaltyMultiplier": 1.77,
+        "dominanceThreshold": 1.61,
+        "dominancePenaltyMultiplier": 1.73,
+        "underdogBonus": 0.72,
+        "projectionHorizon": 63,
+        "discountRate": 0.016
+      },
+      "time": 137.884
+    },
+    {
+      "generation": 38,
+      "bestFitness": 0.325,
+      "avgFitness": 0.23975000000000002,
+      "bestGenome": {
+        "sellerShareThreshold": 0.25,
+        "mutualTradeRatio": 0.78,
+        "leaderPenaltyMultiplier": 1.84,
+        "dominanceThreshold": 1.59,
+        "dominancePenaltyMultiplier": 2.26,
+        "underdogBonus": 0.69,
+        "projectionHorizon": 61,
+        "discountRate": 0.025
+      },
+      "time": 157.977
+    },
+    {
+      "generation": 39,
+      "bestFitness": 0.3375,
+      "avgFitness": 0.22774999999999995,
+      "bestGenome": {
+        "sellerShareThreshold": 0.3,
+        "mutualTradeRatio": 0.77,
+        "leaderPenaltyMultiplier": 1.95,
+        "dominanceThreshold": 1.3,
+        "dominancePenaltyMultiplier": 1.66,
+        "underdogBonus": 0.69,
+        "projectionHorizon": 59,
+        "discountRate": 0.011
+      },
+      "time": 128.987
+    },
+    {
+      "generation": 40,
+      "bestFitness": 0.3375,
+      "avgFitness": 0.2395,
+      "bestGenome": {
+        "sellerShareThreshold": 0.31,
+        "mutualTradeRatio": 0.73,
+        "leaderPenaltyMultiplier": 1.86,
+        "dominanceThreshold": 1.56,
+        "dominancePenaltyMultiplier": 1.92,
+        "underdogBonus": 0.72,
+        "projectionHorizon": 51,
+        "discountRate": 0.015
+      },
+      "time": 155.955
+    },
+    {
+      "generation": 41,
+      "bestFitness": 0.35,
+      "avgFitness": 0.23200000000000007,
+      "bestGenome": {
+        "sellerShareThreshold": 0.3,
+        "mutualTradeRatio": 0.71,
+        "leaderPenaltyMultiplier": 1.84,
+        "dominanceThreshold": 1.58,
+        "dominancePenaltyMultiplier": 1.92,
+        "underdogBonus": 0.7,
+        "projectionHorizon": 69,
+        "discountRate": 0.014
+      },
+      "time": 126.291
+    },
+    {
+      "generation": 42,
+      "bestFitness": 0.3375,
+      "avgFitness": 0.23549999999999996,
+      "bestGenome": {
+        "sellerShareThreshold": 0.24,
+        "mutualTradeRatio": 0.73,
+        "leaderPenaltyMultiplier": 1.9,
+        "dominanceThreshold": 1.42,
+        "dominancePenaltyMultiplier": 1.61,
+        "underdogBonus": 0.72,
+        "projectionHorizon": 69,
+        "discountRate": 0.012
+      },
+      "time": 148.231
+    },
+    {
+      "generation": 43,
+      "bestFitness": 0.3625,
+      "avgFitness": 0.23775,
+      "bestGenome": {
+        "sellerShareThreshold": 0.26,
+        "mutualTradeRatio": 0.8,
+        "leaderPenaltyMultiplier": 1.82,
+        "dominanceThreshold": 1.6,
+        "dominancePenaltyMultiplier": 2.65,
+        "underdogBonus": 0.65,
+        "projectionHorizon": 67,
+        "discountRate": 0.017
+      },
+      "time": 149.888
+    },
+    {
+      "generation": 44,
+      "bestFitness": 0.3625,
+      "avgFitness": 0.23824999999999996,
+      "bestGenome": {
+        "sellerShareThreshold": 0.33,
+        "mutualTradeRatio": 0.69,
+        "leaderPenaltyMultiplier": 1.97,
+        "dominanceThreshold": 1.69,
+        "dominancePenaltyMultiplier": 2.71,
+        "underdogBonus": 0.72,
+        "projectionHorizon": 73,
+        "discountRate": 0.015
+      },
+      "time": 142.629
+    },
+    {
+      "generation": 45,
+      "bestFitness": 0.35,
+      "avgFitness": 0.23724999999999993,
+      "bestGenome": {
+        "sellerShareThreshold": 0.3,
+        "mutualTradeRatio": 0.66,
+        "leaderPenaltyMultiplier": 1.85,
+        "dominanceThreshold": 1.49,
+        "dominancePenaltyMultiplier": 1.72,
+        "underdogBonus": 0.75,
+        "projectionHorizon": 62,
+        "discountRate": 0.011
+      },
+      "time": 155.026
+    },
+    {
+      "generation": 46,
+      "bestFitness": 0.4,
+      "avgFitness": 0.24349999999999997,
+      "bestGenome": {
+        "sellerShareThreshold": 0.33,
+        "mutualTradeRatio": 0.79,
+        "leaderPenaltyMultiplier": 1.61,
+        "dominanceThreshold": 1.6,
+        "dominancePenaltyMultiplier": 2.68,
+        "underdogBonus": 0.69,
+        "projectionHorizon": 69,
+        "discountRate": 0.017
+      },
+      "time": 140.478
+    },
+    {
+      "generation": 47,
+      "bestFitness": 0.3125,
+      "avgFitness": 0.2365,
+      "bestGenome": {
+        "sellerShareThreshold": 0.34,
+        "mutualTradeRatio": 0.7,
+        "leaderPenaltyMultiplier": 1.97,
+        "dominanceThreshold": 1.69,
+        "dominancePenaltyMultiplier": 2.03,
+        "underdogBonus": 0.91,
+        "projectionHorizon": 62,
+        "discountRate": 0.011
+      },
+      "time": 110.049
+    },
+    {
+      "generation": 48,
+      "bestFitness": 0.325,
+      "avgFitness": 0.23849999999999993,
+      "bestGenome": {
+        "sellerShareThreshold": 0.26,
+        "mutualTradeRatio": 0.69,
+        "leaderPenaltyMultiplier": 1.61,
+        "dominanceThreshold": 1.61,
+        "dominancePenaltyMultiplier": 2.08,
+        "underdogBonus": 0.65,
+        "projectionHorizon": 63,
+        "discountRate": 0.01
+      },
+      "time": 135.876
+    },
+    {
+      "generation": 49,
+      "bestFitness": 0.375,
+      "avgFitness": 0.24149999999999994,
+      "bestGenome": {
+        "sellerShareThreshold": 0.27,
+        "mutualTradeRatio": 0.68,
+        "leaderPenaltyMultiplier": 2.1,
+        "dominanceThreshold": 1.61,
+        "dominancePenaltyMultiplier": 2.16,
+        "underdogBonus": 0.65,
+        "projectionHorizon": 66,
+        "discountRate": 0.017
+      },
+      "time": 149.113
+    },
+    {
+      "generation": 50,
+      "bestFitness": 0.325,
+      "avgFitness": 0.23024999999999995,
+      "bestGenome": {
+        "sellerShareThreshold": 0.29,
+        "mutualTradeRatio": 0.8,
+        "leaderPenaltyMultiplier": 1.75,
+        "dominanceThreshold": 1.58,
+        "dominancePenaltyMultiplier": 2.64,
+        "underdogBonus": 0.94,
+        "projectionHorizon": 67,
+        "discountRate": 0.013
+      },
+      "time": 126.713
+    },
+    {
+      "generation": 51,
+      "bestFitness": 0.35,
+      "avgFitness": 0.23274999999999998,
+      "bestGenome": {
+        "sellerShareThreshold": 0.3,
+        "mutualTradeRatio": 0.69,
+        "leaderPenaltyMultiplier": 1.71,
+        "dominanceThreshold": 1.64,
+        "dominancePenaltyMultiplier": 1.99,
+        "underdogBonus": 0.65,
+        "projectionHorizon": 63,
+        "discountRate": 0.013
+      },
+      "time": 136.505
+    },
+    {
+      "generation": 52,
+      "bestFitness": 0.325,
+      "avgFitness": 0.22599999999999998,
+      "bestGenome": {
+        "sellerShareThreshold": 0.3,
+        "mutualTradeRatio": 0.67,
+        "leaderPenaltyMultiplier": 2.01,
+        "dominanceThreshold": 1.71,
+        "dominancePenaltyMultiplier": 2.16,
+        "underdogBonus": 0.63,
+        "projectionHorizon": 66,
+        "discountRate": 0.014
+      },
+      "time": 143.451
+    },
+    {
+      "generation": 53,
+      "bestFitness": 0.3125,
+      "avgFitness": 0.2352499999999999,
+      "bestGenome": {
+        "sellerShareThreshold": 0.3,
+        "mutualTradeRatio": 0.67,
+        "leaderPenaltyMultiplier": 2.01,
+        "dominanceThreshold": 1.71,
+        "dominancePenaltyMultiplier": 2.16,
+        "underdogBonus": 0.63,
+        "projectionHorizon": 66,
+        "discountRate": 0.014
+      },
+      "time": 158.598
+    },
+    {
+      "generation": 54,
+      "bestFitness": 0.325,
+      "avgFitness": 0.23799999999999993,
+      "bestGenome": {
+        "sellerShareThreshold": 0.31,
+        "mutualTradeRatio": 0.63,
+        "leaderPenaltyMultiplier": 2,
+        "dominanceThreshold": 1.63,
+        "dominancePenaltyMultiplier": 2.16,
+        "underdogBonus": 0.85,
+        "projectionHorizon": 66,
+        "discountRate": 0.014
+      },
+      "time": 132.546
+    },
+    {
+      "generation": 55,
+      "bestFitness": 0.4,
+      "avgFitness": 0.23774999999999988,
+      "bestGenome": {
+        "sellerShareThreshold": 0.3,
+        "mutualTradeRatio": 0.75,
+        "leaderPenaltyMultiplier": 1.88,
+        "dominanceThreshold": 1.57,
+        "dominancePenaltyMultiplier": 2.63,
+        "underdogBonus": 0.85,
+        "projectionHorizon": 63,
+        "discountRate": 0.013
+      },
+      "time": 144.853
+    },
+    {
+      "generation": 56,
+      "bestFitness": 0.3125,
+      "avgFitness": 0.22349999999999998,
+      "bestGenome": {
+        "sellerShareThreshold": 0.3,
+        "mutualTradeRatio": 0.68,
+        "leaderPenaltyMultiplier": 1.99,
+        "dominanceThreshold": 1.56,
+        "dominancePenaltyMultiplier": 2.62,
+        "underdogBonus": 0.66,
+        "projectionHorizon": 57,
+        "discountRate": 0.013
+      },
+      "time": 131.88
+    },
+    {
+      "generation": 57,
+      "bestFitness": 0.375,
+      "avgFitness": 0.23799999999999993,
+      "bestGenome": {
+        "sellerShareThreshold": 0.29,
+        "mutualTradeRatio": 0.68,
+        "leaderPenaltyMultiplier": 2.02,
+        "dominanceThreshold": 1.65,
+        "dominancePenaltyMultiplier": 2.19,
+        "underdogBonus": 0.86,
+        "projectionHorizon": 63,
+        "discountRate": 0.016
+      },
+      "time": 135.943
+    },
+    {
+      "generation": 58,
+      "bestFitness": 0.3375,
+      "avgFitness": 0.2269999999999999,
+      "bestGenome": {
+        "sellerShareThreshold": 0.28,
+        "mutualTradeRatio": 0.84,
+        "leaderPenaltyMultiplier": 2.05,
+        "dominanceThreshold": 1.63,
+        "dominancePenaltyMultiplier": 1.66,
+        "underdogBonus": 0.85,
+        "projectionHorizon": 66,
+        "discountRate": 0.014
+      },
+      "time": 127.893
+    },
+    {
+      "generation": 59,
+      "bestFitness": 0.325,
+      "avgFitness": 0.23425000000000004,
+      "bestGenome": {
+        "sellerShareThreshold": 0.29,
+        "mutualTradeRatio": 0.62,
+        "leaderPenaltyMultiplier": 2.09,
+        "dominanceThreshold": 1.53,
+        "dominancePenaltyMultiplier": 2.44,
+        "underdogBonus": 0.85,
+        "projectionHorizon": 66,
+        "discountRate": 0.018
+      },
+      "time": 136.64
+    },
+    {
+      "generation": 60,
+      "bestFitness": 0.3625,
+      "avgFitness": 0.23449999999999993,
+      "bestGenome": {
+        "sellerShareThreshold": 0.28,
+        "mutualTradeRatio": 0.56,
+        "leaderPenaltyMultiplier": 2.1,
+        "dominanceThreshold": 1.71,
+        "dominancePenaltyMultiplier": 2.71,
+        "underdogBonus": 0.83,
+        "projectionHorizon": 63,
+        "discountRate": 0.01
+      },
+      "time": 141.985
+    },
+    {
+      "generation": 61,
+      "bestFitness": 0.3125,
+      "avgFitness": 0.22424999999999998,
+      "bestGenome": {
+        "sellerShareThreshold": 0.28,
+        "mutualTradeRatio": 0.84,
+        "leaderPenaltyMultiplier": 2.05,
+        "dominanceThreshold": 1.56,
+        "dominancePenaltyMultiplier": 2.61,
+        "underdogBonus": 0.75,
+        "projectionHorizon": 63,
+        "discountRate": 0.014
+      },
+      "time": 149.453
+    },
+    {
+      "generation": 62,
+      "bestFitness": 0.325,
+      "avgFitness": 0.23549999999999993,
+      "bestGenome": {
+        "sellerShareThreshold": 0.27,
+        "mutualTradeRatio": 0.68,
+        "leaderPenaltyMultiplier": 2.02,
+        "dominanceThreshold": 1.76,
+        "dominancePenaltyMultiplier": 1.99,
+        "underdogBonus": 0.77,
+        "projectionHorizon": 69,
+        "discountRate": 0.01
+      },
+      "time": 139.145
+    },
+    {
+      "generation": 63,
+      "bestFitness": 0.3375,
+      "avgFitness": 0.22899999999999987,
+      "bestGenome": {
+        "sellerShareThreshold": 0.28,
+        "mutualTradeRatio": 0.78,
+        "leaderPenaltyMultiplier": 1.77,
+        "dominanceThreshold": 1.72,
+        "dominancePenaltyMultiplier": 1.6,
+        "underdogBonus": 0.85,
+        "projectionHorizon": 61,
+        "discountRate": 0.01
+      },
+      "time": 146.843
+    },
+    {
+      "generation": 64,
+      "bestFitness": 0.3625,
+      "avgFitness": 0.22625,
+      "bestGenome": {
+        "sellerShareThreshold": 0.27,
+        "mutualTradeRatio": 0.68,
+        "leaderPenaltyMultiplier": 2.02,
+        "dominanceThreshold": 1.76,
+        "dominancePenaltyMultiplier": 1.99,
+        "underdogBonus": 0.77,
+        "projectionHorizon": 69,
+        "discountRate": 0.012
+      },
+      "time": 144.235
+    },
+    {
+      "generation": 65,
+      "bestFitness": 0.325,
+      "avgFitness": 0.2345,
+      "bestGenome": {
+        "sellerShareThreshold": 0.27,
+        "mutualTradeRatio": 0.84,
+        "leaderPenaltyMultiplier": 2.02,
+        "dominanceThreshold": 1.52,
+        "dominancePenaltyMultiplier": 1.99,
+        "underdogBonus": 0.77,
+        "projectionHorizon": 66,
+        "discountRate": 0.012
+      },
+      "time": 137.486
+    },
+    {
+      "generation": 66,
+      "bestFitness": 0.3125,
+      "avgFitness": 0.22524999999999998,
+      "bestGenome": {
+        "sellerShareThreshold": 0.25,
+        "mutualTradeRatio": 0.84,
+        "leaderPenaltyMultiplier": 2.02,
+        "dominanceThreshold": 1.76,
+        "dominancePenaltyMultiplier": 1.99,
+        "underdogBonus": 0.82,
+        "projectionHorizon": 67,
+        "discountRate": 0.01
+      },
+      "time": 139.348
+    },
+    {
+      "generation": 67,
+      "bestFitness": 0.325,
+      "avgFitness": 0.23275,
+      "bestGenome": {
+        "sellerShareThreshold": 0.25,
+        "mutualTradeRatio": 0.82,
+        "leaderPenaltyMultiplier": 2.02,
+        "dominanceThreshold": 1.76,
+        "dominancePenaltyMultiplier": 1.99,
+        "underdogBonus": 0.82,
+        "projectionHorizon": 63,
+        "discountRate": 0.01
+      },
+      "time": 143.44
+    },
+    {
+      "generation": 68,
+      "bestFitness": 0.3375,
+      "avgFitness": 0.23850000000000002,
+      "bestGenome": {
+        "sellerShareThreshold": 0.3,
+        "mutualTradeRatio": 0.72,
+        "leaderPenaltyMultiplier": 2.15,
+        "dominanceThreshold": 1.45,
+        "dominancePenaltyMultiplier": 2.24,
+        "underdogBonus": 0.77,
+        "projectionHorizon": 71,
+        "discountRate": 0.019
+      },
+      "time": 154.464
+    },
+    {
+      "generation": 69,
+      "bestFitness": 0.3125,
+      "avgFitness": 0.2224999999999999,
+      "bestGenome": {
+        "sellerShareThreshold": 0.28,
+        "mutualTradeRatio": 0.77,
+        "leaderPenaltyMultiplier": 2.04,
+        "dominanceThreshold": 1.47,
+        "dominancePenaltyMultiplier": 1.99,
+        "underdogBonus": 0.76,
+        "projectionHorizon": 66,
+        "discountRate": 0.01
+      },
+      "time": 152.751
+    },
+    {
+      "generation": 70,
+      "bestFitness": 0.3375,
+      "avgFitness": 0.225,
+      "bestGenome": {
+        "sellerShareThreshold": 0.28,
+        "mutualTradeRatio": 0.77,
+        "leaderPenaltyMultiplier": 2.22,
+        "dominanceThreshold": 1.47,
+        "dominancePenaltyMultiplier": 1.99,
+        "underdogBonus": 0.76,
+        "projectionHorizon": 66,
+        "discountRate": 0.01
+      },
+      "time": 138.89
+    },
+    {
+      "generation": 71,
+      "bestFitness": 0.35,
+      "avgFitness": 0.23099999999999996,
+      "bestGenome": {
+        "sellerShareThreshold": 0.33,
+        "mutualTradeRatio": 0.82,
+        "leaderPenaltyMultiplier": 2.08,
+        "dominanceThreshold": 1.54,
+        "dominancePenaltyMultiplier": 1.89,
+        "underdogBonus": 0.85,
+        "projectionHorizon": 66,
+        "discountRate": 0.01
+      },
+      "time": 153.985
+    },
+    {
+      "generation": 72,
+      "bestFitness": 0.325,
+      "avgFitness": 0.2317499999999999,
+      "bestGenome": {
+        "sellerShareThreshold": 0.26,
+        "mutualTradeRatio": 0.71,
+        "leaderPenaltyMultiplier": 2.02,
+        "dominanceThreshold": 1.76,
+        "dominancePenaltyMultiplier": 2.32,
+        "underdogBonus": 0.81,
+        "projectionHorizon": 64,
+        "discountRate": 0.012
+      },
+      "time": 138.493
+    },
+    {
+      "generation": 73,
+      "bestFitness": 0.3875,
+      "avgFitness": 0.23949999999999994,
+      "bestGenome": {
+        "sellerShareThreshold": 0.3,
+        "mutualTradeRatio": 0.84,
+        "leaderPenaltyMultiplier": 2.28,
+        "dominanceThreshold": 1.72,
+        "dominancePenaltyMultiplier": 2.3,
+        "underdogBonus": 0.92,
+        "projectionHorizon": 69,
+        "discountRate": 0.01
+      },
+      "time": 169.768
+    },
+    {
+      "generation": 74,
+      "bestFitness": 0.325,
+      "avgFitness": 0.24600000000000005,
+      "bestGenome": {
+        "sellerShareThreshold": 0.33,
+        "mutualTradeRatio": 0.82,
+        "leaderPenaltyMultiplier": 2.36,
+        "dominanceThreshold": 1.77,
+        "dominancePenaltyMultiplier": 2.3,
+        "underdogBonus": 0.85,
+        "projectionHorizon": 71,
+        "discountRate": 0.016
+      },
+      "time": 143.667
+    },
+    {
+      "generation": 75,
+      "bestFitness": 0.3125,
+      "avgFitness": 0.23925000000000002,
+      "bestGenome": {
+        "sellerShareThreshold": 0.28,
+        "mutualTradeRatio": 0.86,
+        "leaderPenaltyMultiplier": 2.28,
+        "dominanceThreshold": 1.68,
+        "dominancePenaltyMultiplier": 1.83,
+        "underdogBonus": 0.86,
+        "projectionHorizon": 69,
+        "discountRate": 0.012
+      },
+      "time": 140.457
+    },
+    {
+      "generation": 76,
+      "bestFitness": 0.325,
+      "avgFitness": 0.22899999999999995,
+      "bestGenome": {
+        "sellerShareThreshold": 0.25,
+        "mutualTradeRatio": 0.78,
+        "leaderPenaltyMultiplier": 2.1,
+        "dominanceThreshold": 1.77,
+        "dominancePenaltyMultiplier": 1.69,
+        "underdogBonus": 0.8,
+        "projectionHorizon": 65,
+        "discountRate": 0.014
+      },
+      "time": 140.167
+    },
+    {
+      "generation": 77,
+      "bestFitness": 0.3375,
+      "avgFitness": 0.252,
+      "bestGenome": {
+        "sellerShareThreshold": 0.28,
+        "mutualTradeRatio": 0.84,
+        "leaderPenaltyMultiplier": 2.24,
+        "dominanceThreshold": 1.71,
+        "dominancePenaltyMultiplier": 1.84,
+        "underdogBonus": 0.8,
+        "projectionHorizon": 80,
+        "discountRate": 0.01
+      },
+      "time": 156.424
+    },
+    {
+      "generation": 78,
+      "bestFitness": 0.325,
+      "avgFitness": 0.24275000000000005,
+      "bestGenome": {
+        "sellerShareThreshold": 0.28,
+        "mutualTradeRatio": 0.84,
+        "leaderPenaltyMultiplier": 2.1,
+        "dominanceThreshold": 1.65,
+        "dominancePenaltyMultiplier": 1.84,
+        "underdogBonus": 0.82,
+        "projectionHorizon": 80,
+        "discountRate": 0.011
+      },
+      "time": 149.939
+    },
+    {
+      "generation": 79,
+      "bestFitness": 0.3625,
+      "avgFitness": 0.24324999999999997,
+      "bestGenome": {
+        "sellerShareThreshold": 0.24,
+        "mutualTradeRatio": 0.82,
+        "leaderPenaltyMultiplier": 2.35,
+        "dominanceThreshold": 1.79,
+        "dominancePenaltyMultiplier": 2.11,
+        "underdogBonus": 0.85,
+        "projectionHorizon": 71,
+        "discountRate": 0.017
+      },
+      "time": 144.6
+    },
+    {
+      "generation": 80,
+      "bestFitness": 0.3625,
+      "avgFitness": 0.2312499999999999,
+      "bestGenome": {
+        "sellerShareThreshold": 0.26,
+        "mutualTradeRatio": 0.75,
+        "leaderPenaltyMultiplier": 2.24,
+        "dominanceThreshold": 1.82,
+        "dominancePenaltyMultiplier": 1.87,
+        "underdogBonus": 0.9,
+        "projectionHorizon": 73,
+        "discountRate": 0.021
+      },
+      "time": 158.602
+    },
+    {
+      "generation": 81,
+      "bestFitness": 0.3125,
+      "avgFitness": 0.22849999999999987,
+      "bestGenome": {
+        "sellerShareThreshold": 0.26,
+        "mutualTradeRatio": 0.84,
+        "leaderPenaltyMultiplier": 2,
+        "dominanceThreshold": 1.8,
+        "dominancePenaltyMultiplier": 1.87,
+        "underdogBonus": 0.8,
+        "projectionHorizon": 71,
+        "discountRate": 0.017
+      },
+      "time": 143.255
+    },
+    {
+      "generation": 82,
+      "bestFitness": 0.3375,
+      "avgFitness": 0.22774999999999998,
+      "bestGenome": {
+        "sellerShareThreshold": 0.26,
+        "mutualTradeRatio": 0.75,
+        "leaderPenaltyMultiplier": 2.24,
+        "dominanceThreshold": 1.82,
+        "dominancePenaltyMultiplier": 1.96,
+        "underdogBonus": 0.77,
+        "projectionHorizon": 71,
+        "discountRate": 0.021
+      },
+      "time": 166.024
+    },
+    {
+      "generation": 83,
+      "bestFitness": 0.3625,
+      "avgFitness": 0.24375000000000002,
+      "bestGenome": {
+        "sellerShareThreshold": 0.26,
+        "mutualTradeRatio": 0.86,
+        "leaderPenaltyMultiplier": 2.26,
+        "dominanceThreshold": 1.76,
+        "dominancePenaltyMultiplier": 1.76,
+        "underdogBonus": 0.81,
+        "projectionHorizon": 77,
+        "discountRate": 0.016
+      },
+      "time": 148.128
+    },
+    {
+      "generation": 84,
+      "bestFitness": 0.3625,
+      "avgFitness": 0.24174999999999996,
+      "bestGenome": {
+        "sellerShareThreshold": 0.29,
+        "mutualTradeRatio": 0.83,
+        "leaderPenaltyMultiplier": 2.22,
+        "dominanceThreshold": 1.91,
+        "dominancePenaltyMultiplier": 1.84,
+        "underdogBonus": 0.83,
+        "projectionHorizon": 66,
+        "discountRate": 0.02
+      },
+      "time": 147.238
+    },
+    {
+      "generation": 85,
+      "bestFitness": 0.3625,
+      "avgFitness": 0.24375,
+      "bestGenome": {
+        "sellerShareThreshold": 0.23,
+        "mutualTradeRatio": 0.84,
+        "leaderPenaltyMultiplier": 2.07,
+        "dominanceThreshold": 1.85,
+        "dominancePenaltyMultiplier": 1.98,
+        "underdogBonus": 0.82,
+        "projectionHorizon": 76,
+        "discountRate": 0.019
+      },
+      "time": 142.436
+    },
+    {
+      "generation": 86,
+      "bestFitness": 0.3625,
+      "avgFitness": 0.2285000000000001,
+      "bestGenome": {
+        "sellerShareThreshold": 0.27,
+        "mutualTradeRatio": 0.84,
+        "leaderPenaltyMultiplier": 2.19,
+        "dominanceThreshold": 1.68,
+        "dominancePenaltyMultiplier": 2.11,
+        "underdogBonus": 0.82,
+        "projectionHorizon": 66,
+        "discountRate": 0.018
+      },
+      "time": 146.032
+    },
+    {
+      "generation": 87,
+      "bestFitness": 0.3375,
+      "avgFitness": 0.23749999999999996,
+      "bestGenome": {
+        "sellerShareThreshold": 0.23,
+        "mutualTradeRatio": 0.88,
+        "leaderPenaltyMultiplier": 2.2,
+        "dominanceThreshold": 1.72,
+        "dominancePenaltyMultiplier": 1.97,
+        "underdogBonus": 0.77,
+        "projectionHorizon": 77,
+        "discountRate": 0.019
+      },
+      "time": 139.974
+    },
+    {
+      "generation": 88,
+      "bestFitness": 0.35,
+      "avgFitness": 0.25025,
+      "bestGenome": {
+        "sellerShareThreshold": 0.27,
+        "mutualTradeRatio": 0.91,
+        "leaderPenaltyMultiplier": 2.28,
+        "dominanceThreshold": 1.81,
+        "dominancePenaltyMultiplier": 2.11,
+        "underdogBonus": 0.82,
+        "projectionHorizon": 79,
+        "discountRate": 0.016
+      },
+      "time": 152.221
+    },
+    {
+      "generation": 89,
+      "bestFitness": 0.3375,
+      "avgFitness": 0.22474999999999995,
+      "bestGenome": {
+        "sellerShareThreshold": 0.23,
+        "mutualTradeRatio": 0.76,
+        "leaderPenaltyMultiplier": 2.25,
+        "dominanceThreshold": 1.8,
+        "dominancePenaltyMultiplier": 1.97,
+        "underdogBonus": 0.8,
+        "projectionHorizon": 74,
+        "discountRate": 0.019
+      },
+      "time": 127.495
+    },
+    {
+      "generation": 90,
+      "bestFitness": 0.3625,
+      "avgFitness": 0.23525000000000001,
+      "bestGenome": {
+        "sellerShareThreshold": 0.28,
+        "mutualTradeRatio": 0.81,
+        "leaderPenaltyMultiplier": 2.25,
+        "dominanceThreshold": 1.8,
+        "dominancePenaltyMultiplier": 1.97,
+        "underdogBonus": 0.8,
+        "projectionHorizon": 79,
+        "discountRate": 0.019
+      },
+      "time": 145.49
+    },
+    {
+      "generation": 91,
+      "bestFitness": 0.3125,
+      "avgFitness": 0.22575,
+      "bestGenome": {
+        "sellerShareThreshold": 0.34,
+        "mutualTradeRatio": 0.8,
+        "leaderPenaltyMultiplier": 2.24,
+        "dominanceThreshold": 1.84,
+        "dominancePenaltyMultiplier": 2.03,
+        "underdogBonus": 0.75,
+        "projectionHorizon": 77,
+        "discountRate": 0.018
+      },
+      "time": 178.476
+    },
+    {
+      "generation": 92,
+      "bestFitness": 0.325,
+      "avgFitness": 0.23374999999999993,
+      "bestGenome": {
+        "sellerShareThreshold": 0.29,
+        "mutualTradeRatio": 0.86,
+        "leaderPenaltyMultiplier": 2.26,
+        "dominanceThreshold": 1.84,
+        "dominancePenaltyMultiplier": 2.08,
+        "underdogBonus": 0.75,
+        "projectionHorizon": 78,
+        "discountRate": 0.023
+      },
+      "time": 151.004
+    },
+    {
+      "generation": 93,
+      "bestFitness": 0.3875,
+      "avgFitness": 0.23924999999999993,
+      "bestGenome": {
+        "sellerShareThreshold": 0.34,
+        "mutualTradeRatio": 0.76,
+        "leaderPenaltyMultiplier": 2.24,
+        "dominanceThreshold": 1.81,
+        "dominancePenaltyMultiplier": 1.6,
+        "underdogBonus": 0.75,
+        "projectionHorizon": 54,
+        "discountRate": 0.017
+      },
+      "time": 165.572
+    },
+    {
+      "generation": 94,
+      "bestFitness": 0.3375,
+      "avgFitness": 0.23624999999999993,
+      "bestGenome": {
+        "sellerShareThreshold": 0.28,
+        "mutualTradeRatio": 0.84,
+        "leaderPenaltyMultiplier": 2.01,
+        "dominanceThreshold": 1.79,
+        "dominancePenaltyMultiplier": 2.04,
+        "underdogBonus": 0.81,
+        "projectionHorizon": 64,
+        "discountRate": 0.016
+      },
+      "time": 137.698
+    },
+    {
+      "generation": 95,
+      "bestFitness": 0.3375,
+      "avgFitness": 0.23549999999999993,
+      "bestGenome": {
+        "sellerShareThreshold": 0.2,
+        "mutualTradeRatio": 0.88,
+        "leaderPenaltyMultiplier": 2.12,
+        "dominanceThreshold": 1.87,
+        "dominancePenaltyMultiplier": 2.03,
+        "underdogBonus": 0.76,
+        "projectionHorizon": 79,
+        "discountRate": 0.021
+      },
+      "time": 141.808
+    },
+    {
+      "generation": 96,
+      "bestFitness": 0.35,
+      "avgFitness": 0.23849999999999988,
+      "bestGenome": {
+        "sellerShareThreshold": 0.2,
+        "mutualTradeRatio": 0.84,
+        "leaderPenaltyMultiplier": 2.01,
+        "dominanceThreshold": 1.86,
+        "dominancePenaltyMultiplier": 2.03,
+        "underdogBonus": 0.81,
+        "projectionHorizon": 64,
+        "discountRate": 0.021
+      },
+      "time": 138.521
+    },
+    {
+      "generation": 97,
+      "bestFitness": 0.325,
+      "avgFitness": 0.2309999999999999,
+      "bestGenome": {
+        "sellerShareThreshold": 0.22,
+        "mutualTradeRatio": 0.87,
+        "leaderPenaltyMultiplier": 2.1,
+        "dominanceThreshold": 1.88,
+        "dominancePenaltyMultiplier": 1.97,
+        "underdogBonus": 0.76,
+        "projectionHorizon": 74,
+        "discountRate": 0.023
+      },
+      "time": 149.822
+    },
+    {
+      "generation": 98,
+      "bestFitness": 0.3625,
+      "avgFitness": 0.24249999999999997,
+      "bestGenome": {
+        "sellerShareThreshold": 0.28,
+        "mutualTradeRatio": 0.88,
+        "leaderPenaltyMultiplier": 2.38,
+        "dominanceThreshold": 1.8,
+        "dominancePenaltyMultiplier": 1.98,
+        "underdogBonus": 0.78,
+        "projectionHorizon": 56,
+        "discountRate": 0.016
+      },
+      "time": 150.383
+    },
+    {
+      "generation": 99,
+      "bestFitness": 0.3625,
+      "avgFitness": 0.24775000000000008,
+      "bestGenome": {
+        "sellerShareThreshold": 0.28,
+        "mutualTradeRatio": 0.84,
+        "leaderPenaltyMultiplier": 2.02,
+        "dominanceThreshold": 1.8,
+        "dominancePenaltyMultiplier": 1.9,
+        "underdogBonus": 0.76,
+        "projectionHorizon": 66,
+        "discountRate": 0.019
+      },
+      "time": 159.275
+    },
+    {
+      "generation": 100,
+      "bestFitness": 0.3125,
+      "avgFitness": 0.22924999999999998,
+      "bestGenome": {
+        "sellerShareThreshold": 0.28,
+        "mutualTradeRatio": 0.88,
+        "leaderPenaltyMultiplier": 2.35,
+        "dominanceThreshold": 1.8,
+        "dominancePenaltyMultiplier": 1.9,
+        "underdogBonus": 0.76,
+        "projectionHorizon": 66,
+        "discountRate": 0.023
+      },
+      "time": 133.622
+    },
+    {
+      "generation": 101,
+      "bestFitness": 0.35,
+      "avgFitness": 0.23125,
+      "bestGenome": {
+        "sellerShareThreshold": 0.29,
+        "mutualTradeRatio": 0.87,
+        "leaderPenaltyMultiplier": 2.36,
+        "dominanceThreshold": 1.8,
+        "dominancePenaltyMultiplier": 2.01,
+        "underdogBonus": 0.73,
+        "projectionHorizon": 56,
+        "discountRate": 0.016
+      },
+      "time": 139.807
+    },
+    {
+      "generation": 102,
+      "bestFitness": 0.3375,
+      "avgFitness": 0.22874999999999995,
+      "bestGenome": {
+        "sellerShareThreshold": 0.25,
+        "mutualTradeRatio": 0.87,
+        "leaderPenaltyMultiplier": 2.38,
+        "dominanceThreshold": 1.77,
+        "dominancePenaltyMultiplier": 1.96,
+        "underdogBonus": 0.73,
+        "projectionHorizon": 68,
+        "discountRate": 0.026
+      },
+      "time": 142.241
+    },
+    {
+      "generation": 103,
+      "bestFitness": 0.3625,
+      "avgFitness": 0.22724999999999995,
+      "bestGenome": {
+        "sellerShareThreshold": 0.29,
+        "mutualTradeRatio": 0.87,
+        "leaderPenaltyMultiplier": 2.28,
+        "dominanceThreshold": 1.99,
+        "dominancePenaltyMultiplier": 2.01,
+        "underdogBonus": 0.74,
+        "projectionHorizon": 56,
+        "discountRate": 0.022
+      },
+      "time": 139.023
+    },
+    {
+      "generation": 104,
+      "bestFitness": 0.325,
+      "avgFitness": 0.23324999999999996,
+      "bestGenome": {
+        "sellerShareThreshold": 0.18,
+        "mutualTradeRatio": 0.85,
+        "leaderPenaltyMultiplier": 2.23,
+        "dominanceThreshold": 1.68,
+        "dominancePenaltyMultiplier": 1.9,
+        "underdogBonus": 0.83,
+        "projectionHorizon": 74,
+        "discountRate": 0.019
+      },
+      "time": 128.596
+    },
+    {
+      "generation": 105,
+      "bestFitness": 0.3375,
+      "avgFitness": 0.23575,
+      "bestGenome": {
+        "sellerShareThreshold": 0.27,
+        "mutualTradeRatio": 0.91,
+        "leaderPenaltyMultiplier": 2.12,
+        "dominanceThreshold": 1.89,
+        "dominancePenaltyMultiplier": 1.9,
+        "underdogBonus": 0.76,
+        "projectionHorizon": 69,
+        "discountRate": 0.022
+      },
+      "time": 141.819
+    },
+    {
+      "generation": 106,
+      "bestFitness": 0.35,
+      "avgFitness": 0.22425,
+      "bestGenome": {
+        "sellerShareThreshold": 0.3,
+        "mutualTradeRatio": 0.88,
+        "leaderPenaltyMultiplier": 2.15,
+        "dominanceThreshold": 1.82,
+        "dominancePenaltyMultiplier": 1.9,
+        "underdogBonus": 0.72,
+        "projectionHorizon": 68,
+        "discountRate": 0.011
+      },
+      "time": 155.018
+    },
+    {
+      "generation": 107,
+      "bestFitness": 0.3,
+      "avgFitness": 0.23499999999999996,
+      "bestGenome": {
+        "sellerShareThreshold": 0.3,
+        "mutualTradeRatio": 0.86,
+        "leaderPenaltyMultiplier": 2.42,
+        "dominanceThreshold": 1.78,
+        "dominancePenaltyMultiplier": 2.17,
+        "underdogBonus": 0.75,
+        "projectionHorizon": 75,
+        "discountRate": 0.022
+      },
+      "time": 146.717
+    },
+    {
+      "generation": 108,
+      "bestFitness": 0.3375,
+      "avgFitness": 0.23699999999999996,
+      "bestGenome": {
+        "sellerShareThreshold": 0.3,
+        "mutualTradeRatio": 0.82,
+        "leaderPenaltyMultiplier": 2.42,
+        "dominanceThreshold": 1.82,
+        "dominancePenaltyMultiplier": 2.17,
+        "underdogBonus": 0.75,
+        "projectionHorizon": 79,
+        "discountRate": 0.022
+      },
+      "time": 161.498
+    },
+    {
+      "generation": 109,
+      "bestFitness": 0.3875,
+      "avgFitness": 0.2424999999999998,
+      "bestGenome": {
+        "sellerShareThreshold": 0.29,
+        "mutualTradeRatio": 0.86,
+        "leaderPenaltyMultiplier": 2.35,
+        "dominanceThreshold": 1.79,
+        "dominancePenaltyMultiplier": 2.14,
+        "underdogBonus": 0.8,
+        "projectionHorizon": 76,
+        "discountRate": 0.018
+      },
+      "time": 169.279
+    },
+    {
+      "generation": 110,
+      "bestFitness": 0.35,
+      "avgFitness": 0.24325000000000008,
+      "bestGenome": {
+        "sellerShareThreshold": 0.3,
+        "mutualTradeRatio": 0.91,
+        "leaderPenaltyMultiplier": 2.18,
+        "dominanceThreshold": 1.99,
+        "dominancePenaltyMultiplier": 1.94,
+        "underdogBonus": 0.81,
+        "projectionHorizon": 72,
+        "discountRate": 0.01
+      },
+      "time": 125.002
+    },
+    {
+      "generation": 111,
+      "bestFitness": 0.325,
+      "avgFitness": 0.23349999999999993,
+      "bestGenome": {
+        "sellerShareThreshold": 0.33,
+        "mutualTradeRatio": 0.92,
+        "leaderPenaltyMultiplier": 2.09,
+        "dominanceThreshold": 1.79,
+        "dominancePenaltyMultiplier": 1.8,
+        "underdogBonus": 0.73,
+        "projectionHorizon": 59,
+        "discountRate": 0.012
+      },
+      "time": 156.785
+    },
+    {
+      "generation": 112,
+      "bestFitness": 0.3375,
+      "avgFitness": 0.23199999999999987,
+      "bestGenome": {
+        "sellerShareThreshold": 0.3,
+        "mutualTradeRatio": 0.91,
+        "leaderPenaltyMultiplier": 2.25,
+        "dominanceThreshold": 1.85,
+        "dominancePenaltyMultiplier": 1.83,
+        "underdogBonus": 0.74,
+        "projectionHorizon": 55,
+        "discountRate": 0.011
+      },
+      "time": 162.09
+    },
+    {
+      "generation": 113,
+      "bestFitness": 0.3125,
+      "avgFitness": 0.22974999999999987,
+      "bestGenome": {
+        "sellerShareThreshold": 0.26,
+        "mutualTradeRatio": 0.89,
+        "leaderPenaltyMultiplier": 2.5,
+        "dominanceThreshold": 1.82,
+        "dominancePenaltyMultiplier": 1.94,
+        "underdogBonus": 0.74,
+        "projectionHorizon": 80,
+        "discountRate": 0.02
+      },
+      "time": 142.238
+    },
+    {
+      "generation": 114,
+      "bestFitness": 0.3375,
+      "avgFitness": 0.23550000000000001,
+      "bestGenome": {
+        "sellerShareThreshold": 0.3,
+        "mutualTradeRatio": 0.91,
+        "leaderPenaltyMultiplier": 2.25,
+        "dominanceThreshold": 1.85,
+        "dominancePenaltyMultiplier": 1.83,
+        "underdogBonus": 0.74,
+        "projectionHorizon": 55,
+        "discountRate": 0.011
+      },
+      "time": 138.277
+    },
+    {
+      "generation": 115,
+      "bestFitness": 0.3375,
+      "avgFitness": 0.23225000000000004,
+      "bestGenome": {
+        "sellerShareThreshold": 0.33,
+        "mutualTradeRatio": 0.87,
+        "leaderPenaltyMultiplier": 2.17,
+        "dominanceThreshold": 1.86,
+        "dominancePenaltyMultiplier": 2.06,
+        "underdogBonus": 0.72,
+        "projectionHorizon": 64,
+        "discountRate": 0.011
+      },
+      "time": 136.682
+    },
+    {
+      "generation": 116,
+      "bestFitness": 0.3125,
+      "avgFitness": 0.223,
+      "bestGenome": {
+        "sellerShareThreshold": 0.32,
+        "mutualTradeRatio": 0.86,
+        "leaderPenaltyMultiplier": 2.05,
+        "dominanceThreshold": 1.76,
+        "dominancePenaltyMultiplier": 1.94,
+        "underdogBonus": 0.73,
+        "projectionHorizon": 64,
+        "discountRate": 0.011
+      },
+      "time": 123.558
+    },
+    {
+      "generation": 117,
+      "bestFitness": 0.35,
+      "avgFitness": 0.23324999999999996,
+      "bestGenome": {
+        "sellerShareThreshold": 0.3,
+        "mutualTradeRatio": 0.87,
+        "leaderPenaltyMultiplier": 2.26,
+        "dominanceThreshold": 1.85,
+        "dominancePenaltyMultiplier": 1.83,
+        "underdogBonus": 0.72,
+        "projectionHorizon": 55,
+        "discountRate": 0.01
+      },
+      "time": 155.112
+    },
+    {
+      "generation": 118,
+      "bestFitness": 0.375,
+      "avgFitness": 0.24,
+      "bestGenome": {
+        "sellerShareThreshold": 0.26,
+        "mutualTradeRatio": 0.94,
+        "leaderPenaltyMultiplier": 2.05,
+        "dominanceThreshold": 1.82,
+        "dominancePenaltyMultiplier": 1.94,
+        "underdogBonus": 0.73,
+        "projectionHorizon": 64,
+        "discountRate": 0.014
+      },
+      "time": 132.854
+    },
+    {
+      "generation": 119,
+      "bestFitness": 0.3375,
+      "avgFitness": 0.24474999999999994,
+      "bestGenome": {
+        "sellerShareThreshold": 0.33,
+        "mutualTradeRatio": 0.87,
+        "leaderPenaltyMultiplier": 2.17,
+        "dominanceThreshold": 1.86,
+        "dominancePenaltyMultiplier": 2.06,
+        "underdogBonus": 0.77,
+        "projectionHorizon": 64,
+        "discountRate": 0.011
+      },
+      "time": 140.569
+    },
+    {
+      "generation": 120,
+      "bestFitness": 0.3,
+      "avgFitness": 0.23174999999999993,
+      "bestGenome": {
+        "sellerShareThreshold": 0.27,
+        "mutualTradeRatio": 0.87,
+        "leaderPenaltyMultiplier": 1.76,
+        "dominanceThreshold": 1.79,
+        "dominancePenaltyMultiplier": 1.85,
+        "underdogBonus": 0.73,
+        "projectionHorizon": 79,
+        "discountRate": 0.019
+      },
+      "time": 124.619
+    },
+    {
+      "generation": 121,
+      "bestFitness": 0.3125,
+      "avgFitness": 0.22724999999999998,
+      "bestGenome": {
+        "sellerShareThreshold": 0.28,
+        "mutualTradeRatio": 0.9,
+        "leaderPenaltyMultiplier": 1.89,
+        "dominanceThreshold": 1.77,
+        "dominancePenaltyMultiplier": 1.85,
+        "underdogBonus": 0.73,
+        "projectionHorizon": 80,
+        "discountRate": 0.016
+      },
+      "time": 143.164
+    },
+    {
+      "generation": 122,
+      "bestFitness": 0.35,
+      "avgFitness": 0.23,
+      "bestGenome": {
+        "sellerShareThreshold": 0.27,
+        "mutualTradeRatio": 0.88,
+        "leaderPenaltyMultiplier": 1.94,
+        "dominanceThreshold": 1.77,
+        "dominancePenaltyMultiplier": 1.7,
+        "underdogBonus": 0.77,
+        "projectionHorizon": 80,
+        "discountRate": 0.013
+      },
+      "time": 142.97
+    },
+    {
+      "generation": 123,
+      "bestFitness": 0.3375,
+      "avgFitness": 0.23175,
+      "bestGenome": {
+        "sellerShareThreshold": 0.28,
+        "mutualTradeRatio": 0.83,
+        "leaderPenaltyMultiplier": 1.73,
+        "dominanceThreshold": 1.91,
+        "dominancePenaltyMultiplier": 1.94,
+        "underdogBonus": 0.76,
+        "projectionHorizon": 58,
+        "discountRate": 0.01
+      },
+      "time": 139.024
+    },
+    {
+      "generation": 124,
+      "bestFitness": 0.3125,
+      "avgFitness": 0.23524999999999996,
+      "bestGenome": {
+        "sellerShareThreshold": 0.28,
+        "mutualTradeRatio": 0.94,
+        "leaderPenaltyMultiplier": 2.08,
+        "dominanceThreshold": 1.76,
+        "dominancePenaltyMultiplier": 1.82,
+        "underdogBonus": 0.72,
+        "projectionHorizon": 53,
+        "discountRate": 0.015
+      },
+      "time": 195.525
+    },
+    {
+      "generation": 125,
+      "bestFitness": 0.3875,
+      "avgFitness": 0.2460000000000001,
+      "bestGenome": {
+        "sellerShareThreshold": 0.26,
+        "mutualTradeRatio": 0.91,
+        "leaderPenaltyMultiplier": 1.84,
+        "dominanceThreshold": 1.89,
+        "dominancePenaltyMultiplier": 2.11,
+        "underdogBonus": 0.77,
+        "projectionHorizon": 60,
+        "discountRate": 0.022
+      },
+      "time": 191.198
+    },
+    {
+      "generation": 126,
+      "bestFitness": 0.325,
+      "avgFitness": 0.2294999999999999,
+      "bestGenome": {
+        "sellerShareThreshold": 0.27,
+        "mutualTradeRatio": 0.89,
+        "leaderPenaltyMultiplier": 2,
+        "dominanceThreshold": 1.72,
+        "dominancePenaltyMultiplier": 1.7,
+        "underdogBonus": 0.76,
+        "projectionHorizon": 64,
+        "discountRate": 0.016
+      },
+      "time": 148.568
+    },
+    {
+      "generation": 127,
+      "bestFitness": 0.3375,
+      "avgFitness": 0.23549999999999993,
+      "bestGenome": {
+        "sellerShareThreshold": 0.27,
+        "mutualTradeRatio": 0.91,
+        "leaderPenaltyMultiplier": 1.95,
+        "dominanceThreshold": 1.77,
+        "dominancePenaltyMultiplier": 1.89,
+        "underdogBonus": 0.73,
+        "projectionHorizon": 64,
+        "discountRate": 0.016
+      },
+      "time": 185.337
+    },
+    {
+      "generation": 128,
+      "bestFitness": 0.325,
+      "avgFitness": 0.24574999999999997,
+      "bestGenome": {
+        "sellerShareThreshold": 0.27,
+        "mutualTradeRatio": 0.91,
+        "leaderPenaltyMultiplier": 1.93,
+        "dominanceThreshold": 1.79,
+        "dominancePenaltyMultiplier": 1.88,
+        "underdogBonus": 0.77,
+        "projectionHorizon": 64,
+        "discountRate": 0.014
+      },
+      "time": 184.739
+    },
+    {
+      "generation": 129,
+      "bestFitness": 0.3375,
+      "avgFitness": 0.23274999999999996,
+      "bestGenome": {
+        "sellerShareThreshold": 0.27,
+        "mutualTradeRatio": 0.88,
+        "leaderPenaltyMultiplier": 1.81,
+        "dominanceThreshold": 1.84,
+        "dominancePenaltyMultiplier": 1.6,
+        "underdogBonus": 0.77,
+        "projectionHorizon": 75,
+        "discountRate": 0.015
+      },
+      "time": 190.038
+    },
+    {
+      "generation": 130,
+      "bestFitness": 0.325,
+      "avgFitness": 0.22774999999999987,
+      "bestGenome": {
+        "sellerShareThreshold": 0.27,
+        "mutualTradeRatio": 0.89,
+        "leaderPenaltyMultiplier": 2,
+        "dominanceThreshold": 1.73,
+        "dominancePenaltyMultiplier": 1.78,
+        "underdogBonus": 0.74,
+        "projectionHorizon": 75,
+        "discountRate": 0.016
+      },
+      "time": 178.419
+    },
+    {
+      "generation": 131,
+      "bestFitness": 0.3375,
+      "avgFitness": 0.24425000000000005,
+      "bestGenome": {
+        "sellerShareThreshold": 0.25,
+        "mutualTradeRatio": 0.88,
+        "leaderPenaltyMultiplier": 1.97,
+        "dominanceThreshold": 1.84,
+        "dominancePenaltyMultiplier": 2.04,
+        "underdogBonus": 0.77,
+        "projectionHorizon": 69,
+        "discountRate": 0.015
+      },
+      "time": 144.212
+    },
+    {
+      "generation": 132,
+      "bestFitness": 0.3375,
+      "avgFitness": 0.23574999999999996,
+      "bestGenome": {
+        "sellerShareThreshold": 0.27,
+        "mutualTradeRatio": 0.91,
+        "leaderPenaltyMultiplier": 1.88,
+        "dominanceThreshold": 1.79,
+        "dominancePenaltyMultiplier": 1.88,
+        "underdogBonus": 0.76,
+        "projectionHorizon": 66,
+        "discountRate": 0.01
+      },
+      "time": 149.911
+    },
+    {
+      "generation": 133,
+      "bestFitness": 0.325,
+      "avgFitness": 0.23299999999999993,
+      "bestGenome": {
+        "sellerShareThreshold": 0.24,
+        "mutualTradeRatio": 0.91,
+        "leaderPenaltyMultiplier": 1.82,
+        "dominanceThreshold": 1.79,
+        "dominancePenaltyMultiplier": 1.55,
+        "underdogBonus": 0.78,
+        "projectionHorizon": 66,
+        "discountRate": 0.01
+      },
+      "time": 125.778
+    },
+    {
+      "generation": 134,
+      "bestFitness": 0.3125,
+      "avgFitness": 0.22299999999999995,
+      "bestGenome": {
+        "sellerShareThreshold": 0.29,
+        "mutualTradeRatio": 0.87,
+        "leaderPenaltyMultiplier": 1.95,
+        "dominanceThreshold": 1.81,
+        "dominancePenaltyMultiplier": 2.1,
+        "underdogBonus": 0.78,
+        "projectionHorizon": 66,
+        "discountRate": 0.014
+      },
+      "time": 149.512
+    },
+    {
+      "generation": 135,
+      "bestFitness": 0.3,
+      "avgFitness": 0.21674999999999997,
+      "bestGenome": {
+        "sellerShareThreshold": 0.24,
+        "mutualTradeRatio": 0.97,
+        "leaderPenaltyMultiplier": 1.68,
+        "dominanceThreshold": 1.71,
+        "dominancePenaltyMultiplier": 2.06,
+        "underdogBonus": 0.79,
+        "projectionHorizon": 64,
+        "discountRate": 0.01
+      },
+      "time": 154.626
+    },
+    {
+      "generation": 136,
+      "bestFitness": 0.3625,
+      "avgFitness": 0.22974999999999998,
+      "bestGenome": {
+        "sellerShareThreshold": 0.29,
+        "mutualTradeRatio": 0.97,
+        "leaderPenaltyMultiplier": 1.93,
+        "dominanceThreshold": 1.71,
+        "dominancePenaltyMultiplier": 2.06,
+        "underdogBonus": 0.79,
+        "projectionHorizon": 64,
+        "discountRate": 0.016
+      },
+      "time": 137.825
+    },
+    {
+      "generation": 137,
+      "bestFitness": 0.375,
+      "avgFitness": 0.23924999999999985,
+      "bestGenome": {
+        "sellerShareThreshold": 0.24,
+        "mutualTradeRatio": 0.97,
+        "leaderPenaltyMultiplier": 1.81,
+        "dominanceThreshold": 1.91,
+        "dominancePenaltyMultiplier": 1.8,
+        "underdogBonus": 0.79,
+        "projectionHorizon": 66,
+        "discountRate": 0.015
+      },
+      "time": 143.508
+    },
+    {
+      "generation": 138,
+      "bestFitness": 0.325,
+      "avgFitness": 0.22174999999999997,
+      "bestGenome": {
+        "sellerShareThreshold": 0.23,
+        "mutualTradeRatio": 0.95,
+        "leaderPenaltyMultiplier": 1.88,
+        "dominanceThreshold": 1.82,
+        "dominancePenaltyMultiplier": 1.99,
+        "underdogBonus": 0.77,
+        "projectionHorizon": 66,
+        "discountRate": 0.013
+      },
+      "time": 125.999
+    },
+    {
+      "generation": 139,
+      "bestFitness": 0.35,
+      "avgFitness": 0.23674999999999996,
+      "bestGenome": {
+        "sellerShareThreshold": 0.26,
+        "mutualTradeRatio": 0.93,
+        "leaderPenaltyMultiplier": 1.9,
+        "dominanceThreshold": 1.75,
+        "dominancePenaltyMultiplier": 1.87,
+        "underdogBonus": 0.69,
+        "projectionHorizon": 70,
+        "discountRate": 0.011
+      },
+      "time": 129.235
+    },
+    {
+      "generation": 140,
+      "bestFitness": 0.325,
+      "avgFitness": 0.22649999999999987,
+      "bestGenome": {
+        "sellerShareThreshold": 0.25,
+        "mutualTradeRatio": 0.89,
+        "leaderPenaltyMultiplier": 1.9,
+        "dominanceThreshold": 1.76,
+        "dominancePenaltyMultiplier": 1.88,
+        "underdogBonus": 0.77,
+        "projectionHorizon": 58,
+        "discountRate": 0.013
+      },
+      "time": 124.253
+    },
+    {
+      "generation": 141,
+      "bestFitness": 0.3125,
+      "avgFitness": 0.23325000000000004,
+      "bestGenome": {
+        "sellerShareThreshold": 0.25,
+        "mutualTradeRatio": 0.89,
+        "leaderPenaltyMultiplier": 1.9,
+        "dominanceThreshold": 1.76,
+        "dominancePenaltyMultiplier": 1.88,
+        "underdogBonus": 0.77,
+        "projectionHorizon": 58,
+        "discountRate": 0.013
+      },
+      "time": 141.161
+    },
+    {
+      "generation": 142,
+      "bestFitness": 0.375,
+      "avgFitness": 0.2392499999999999,
+      "bestGenome": {
+        "sellerShareThreshold": 0.25,
+        "mutualTradeRatio": 0.89,
+        "leaderPenaltyMultiplier": 1.9,
+        "dominanceThreshold": 1.76,
+        "dominancePenaltyMultiplier": 1.99,
+        "underdogBonus": 0.73,
+        "projectionHorizon": 69,
+        "discountRate": 0.011
+      },
+      "time": 128.149
+    },
+    {
+      "generation": 143,
+      "bestFitness": 0.3375,
+      "avgFitness": 0.23474999999999993,
+      "bestGenome": {
+        "sellerShareThreshold": 0.24,
+        "mutualTradeRatio": 0.93,
+        "leaderPenaltyMultiplier": 1.9,
+        "dominanceThreshold": 1.76,
+        "dominancePenaltyMultiplier": 2.22,
+        "underdogBonus": 0.8,
+        "projectionHorizon": 66,
+        "discountRate": 0.013
+      },
+      "time": 131.75
+    },
+    {
+      "generation": 144,
+      "bestFitness": 0.325,
+      "avgFitness": 0.2345,
+      "bestGenome": {
+        "sellerShareThreshold": 0.24,
+        "mutualTradeRatio": 0.94,
+        "leaderPenaltyMultiplier": 1.58,
+        "dominanceThreshold": 1.78,
+        "dominancePenaltyMultiplier": 2.22,
+        "underdogBonus": 0.8,
+        "projectionHorizon": 67,
+        "discountRate": 0.01
+      },
+      "time": 141.436
+    },
+    {
+      "generation": 145,
+      "bestFitness": 0.35,
+      "avgFitness": 0.24199999999999988,
+      "bestGenome": {
+        "sellerShareThreshold": 0.27,
+        "mutualTradeRatio": 0.94,
+        "leaderPenaltyMultiplier": 1.9,
+        "dominanceThreshold": 1.88,
+        "dominancePenaltyMultiplier": 1.59,
+        "underdogBonus": 0.71,
+        "projectionHorizon": 67,
+        "discountRate": 0.015
+      },
+      "time": 140.249
+    },
+    {
+      "generation": 146,
+      "bestFitness": 0.3125,
+      "avgFitness": 0.23324999999999996,
+      "bestGenome": {
+        "sellerShareThreshold": 0.24,
+        "mutualTradeRatio": 0.95,
+        "leaderPenaltyMultiplier": 1.8,
+        "dominanceThreshold": 1.7,
+        "dominancePenaltyMultiplier": 1.5,
+        "underdogBonus": 0.73,
+        "projectionHorizon": 66,
+        "discountRate": 0.013
+      },
+      "time": 146.173
+    },
+    {
+      "generation": 147,
+      "bestFitness": 0.325,
+      "avgFitness": 0.23424999999999996,
+      "bestGenome": {
+        "sellerShareThreshold": 0.2,
+        "mutualTradeRatio": 0.95,
+        "leaderPenaltyMultiplier": 2.15,
+        "dominanceThreshold": 1.81,
+        "dominancePenaltyMultiplier": 2.14,
+        "underdogBonus": 0.76,
+        "projectionHorizon": 66,
+        "discountRate": 0.013
+      },
+      "time": 139.276
+    },
+    {
+      "generation": 148,
+      "bestFitness": 0.3625,
+      "avgFitness": 0.23099999999999987,
+      "bestGenome": {
+        "sellerShareThreshold": 0.24,
+        "mutualTradeRatio": 0.95,
+        "leaderPenaltyMultiplier": 1.8,
+        "dominanceThreshold": 1.7,
+        "dominancePenaltyMultiplier": 1.65,
+        "underdogBonus": 0.73,
+        "projectionHorizon": 60,
+        "discountRate": 0.013
+      },
+      "time": 156.463
+    },
+    {
+      "generation": 149,
+      "bestFitness": 0.325,
+      "avgFitness": 0.23299999999999993,
+      "bestGenome": {
+        "sellerShareThreshold": 0.22,
+        "mutualTradeRatio": 0.91,
+        "leaderPenaltyMultiplier": 1.93,
+        "dominanceThreshold": 1.79,
+        "dominancePenaltyMultiplier": 2.14,
+        "underdogBonus": 0.71,
+        "projectionHorizon": 66,
+        "discountRate": 0.013
+      },
+      "time": 116.286
+    }
+  ],
+  "options": {
+    "populationSize": 50,
+    "generations": 150,
+    "gamesPerEvaluation": 80,
+    "mutationRate": 0.15,
+    "crossoverRate": 0.7,
+    "eliteCount": 4,
+    "tournamentSize": 5,
+    "saveInterval": 5,
+    "outputDir": "./ga-results",
+    "verbose": true
+  },
+  "timestamp": "2026-02-03T11:15:41.191Z"
+}

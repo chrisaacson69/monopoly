@@ -1,0 +1,391 @@
+{
+    "Tiles": [{
+            "Name": "GO",
+            "Text": "COLLECT $200 SALARY AS YOU PASS.",
+            "Color": "#FFFFFF"
+        },
+        {
+            "Name": "Mediterranean Avenue",
+            "Text": "$60",
+            "Color": "#8B4513",
+            "Price": 60,
+            "GroupNumber": 3,
+            "Baserent": 2,
+            "Rent1": 10,
+            "Rent2": 30,
+            "Rent3": 90,
+            "Rent4": 160,
+            "Rent5": 250
+        },
+        {
+            "Name": "Community Chest",
+            "Text": "FOLLOW INSTRUCTIONS ON TOP CARD",
+            "Color": "#FFFFFF"
+        },
+        {
+            "Name": "Baltic Avenue",
+            "Text": "$60",
+            "Color": "#8B4513",
+            "Price": 60,
+            "GroupNumber": 3,
+            "Baserent": 4,
+            "Rent1": 20,
+            "Rent2": 60,
+            "Rent3": 180,
+            "Rent4": 320,
+            "Rent5": 450
+        },
+        {
+            "Name": "City Tax",
+            "Text": "Pay $200",
+            "Color": "#FFFFFF"
+        },
+        {
+            "Name": "Reading Railroad",
+            "Text": "$200",
+            "Color": "#FFFFFF",
+            "Price": 200,
+            "GroupNumber": 1
+        },
+        {
+            "Name": "Oriental Avenue",
+            "Text": "$100",
+            "Color": "#87CEEB",
+            "Price": 100,
+            "GroupNumber": 4,
+            "Baserent": 6,
+            "Rent1": 30,
+            "Rent2": 90,
+            "Rent3": 270,
+            "Rent4": 400,
+            "Rent5": 550
+        },
+        {
+            "Name": "Chance",
+            "Text": "FOLLOW INSTRUCTIONS ON TOP CARD",
+            "Color": "#FFFFFF"
+        },
+        {
+            "Name": "Vermont Avenue",
+            "Text": "$100",
+            "Color": "#87CEEB",
+            "Price": 100,
+            "GroupNumber": 4,
+            "Baserent": 6,
+            "Rent1": 30,
+            "Rent2": 90,
+            "Rent3": 270,
+            "Rent4": 400,
+            "Rent5": 550
+        },
+        {
+            "Name": "Connecticut Avenue",
+            "Text": "$120",
+            "Color": "#87CEEB",
+            "Price": 120,
+            "GroupNumber": 4,
+            "Baserent": 8,
+            "Rent1": 40,
+            "Rent2": 100,
+            "Rent3": 300,
+            "Rent4": 450,
+            "Rent5": 600
+        },
+        {
+            "Name": "Just Visiting",
+            "Text": "",
+            "Color": "#FFFFFF"
+        },
+        {
+            "Name": "St. Charles Place",
+            "Text": "$140",
+            "Color": "#FF0080",
+            "Price": 140,
+            "GroupNumber": 5,
+            "Baserent": 10,
+            "Rent1": 50,
+            "Rent2": 150,
+            "Rent3": 450,
+            "Rent4": 625,
+            "Rent5": 750
+        },
+        {
+            "Name": "Electric Company",
+            "Text": "$150",
+            "Color": "#FFFFFF",
+            "Price": 150,
+            "GroupNumber": 2
+        },
+        {
+            "Name": "States Avenue",
+            "Text": "$140",
+            "Color": "#FF0080",
+            "Price": 140,
+            "GroupNumber": 5,
+            "Baserent": 10,
+            "Rent1": 50,
+            "Rent2": 150,
+            "Rent3": 450,
+            "Rent4": 625,
+            "Rent5": 750
+        },
+        {
+            "Name": "Virginia Avenue",
+            "Text": "$160",
+            "Color": "#FF0080",
+            "Price": 160,
+            "GroupNumber": 5,
+            "Baserent": 12,
+            "Rent1": 60,
+            "Rent2": 180,
+            "Rent3": 500,
+            "Rent4": 700,
+            "Rent5": 900
+        },
+        {
+            "Name": "Pennsylvania Railroad",
+            "Text": "$200",
+            "Color": "#FFFFFF",
+            "Price": 200,
+            "GroupNumber": 1
+        },
+        {
+            "Name": "St. James Place",
+            "Text": "$180",
+            "Color": "#FFA500",
+            "Price": 180,
+            "GroupNumber": 6,
+            "Baserent": 14,
+            "Rent1": 70,
+            "Rent2": 200,
+            "Rent3": 550,
+            "Rent4": 750,
+            "Rent5": 950
+        },
+        {
+            "Name": "Community Chest",
+            "Text": "FOLLOW INSTRUCTIONS ON TOP CARD",
+            "Color": "#FFFFFF"
+        },
+        {
+            "Name": "Tennessee Avenue",
+            "Text": "$180",
+            "Color": "#FFA500",
+            "Price": 180,
+            "GroupNumber": 6,
+            "Baserent": 14,
+            "Rent1": 70,
+            "Rent2": 200,
+            "Rent3": 550,
+            "Rent4": 750,
+            "Rent5": 950
+        },
+        {
+            "Name": "New York Avenue",
+            "Text": "$200",
+            "Color": "#FFA500",
+            "Price": 200,
+            "GroupNumber": 6,
+            "Baserent": 16,
+            "Rent1": 80,
+            "Rent2": 220,
+            "Rent3": 600,
+            "Rent4": 200,
+            "Rent5": 1000
+        },
+        {
+            "Name": "Free Parking",
+            "Text": "",
+            "Color": "#FFFFFF"
+        },
+        {
+            "Name": "Kentucky Avenue",
+            "Text": "$220",
+            "Color": "#FF0000",
+            "Price": 220,
+            "GroupNumber": 7,
+            "Baserent": 18,
+            "Rent1": 90,
+            "Rent2": 250,
+            "Rent3": 700,
+            "Rent4": 875,
+            "Rent5": 1050
+        },
+        {
+            "Name": "Chance",
+            "Text": "FOLLOW INSTRUCTIONS ON TOP CARD",
+            "Color": "#FFFFFF"
+        },
+        {
+            "Name": "Indiana Avenue",
+            "Text": "$220",
+            "Color": "#FF0000",
+            "Price": 220,
+            "GroupNumber": 7,
+            "Baserent": 18,
+            "Rent1": 90,
+            "Rent2": 250,
+            "Rent3": 700,
+            "Rent4": 875,
+            "Rent5": 1050
+        },
+        {
+            "Name": "Illinois Avenue",
+            "Text": "$240",
+            "Color": "#FF0000",
+            "Price": 240,
+            "GroupNumber": 7,
+            "Baserent": 20,
+            "Rent1": 100,
+            "Rent2": 300,
+            "Rent3": 750,
+            "Rent4": 925,
+            "Rent5": 1100
+        },
+        {
+            "Name": "B&O Railroad",
+            "Text": "$200",
+            "Color": "#FFFFFF",
+            "Price": 200,
+            "GroupNumber": 1
+        },
+        {
+            "Name": "Atlantic Avenue",
+            "Text": "$260",
+            "Color": "#FFFF00",
+            "Price": 260,
+            "GroupNumber": 8,
+            "Baserent": 22,
+            "Rent1": 110,
+            "Rent2": 330,
+            "Rent3": 800,
+            "Rent4": 975,
+            "Rent5": 1150
+        },
+        {
+            "Name": "Ventnor Avenue",
+            "Text": "$260",
+            "Color": "#FFFF00",
+            "Price": 260,
+            "GroupNumber": 8,
+            "Baserent": 22,
+            "Rent1": 110,
+            "Rent2": 330,
+            "Rent3": 800,
+            "Rent4": 975,
+            "Rent5": 1150
+        },
+        {
+            "Name": "Water Works",
+            "Text": "$150",
+            "Color": "#FFFFFF",
+            "Price": 150,
+            "GroupNumber": 2
+        },
+        {
+            "Name": "Marvin Gardens",
+            "Text": "$280",
+            "Color": "#FFFF00",
+            "Price": 280,
+            "GroupNumber": 8,
+            "Baserent": 22,
+            "Rent1": 120,
+            "Rent2": 360,
+            "Rent3": 850,
+            "Rent4": 1025,
+            "Rent5": 1200
+        },
+        {
+            "Name": "Go to Jail",
+            "Text": "Go directly to Jail. Do not pass GO. Do not collect $200.",
+            "Color": "#FFFFFF"
+        },
+        {
+            "Name": "Pacific Avenue",
+            "Text": "$300",
+            "Color": "#FFFF00",
+            "Price": 300,
+            "GroupNumber": 9,
+            "Baserent": 26,
+            "Rent1": 130,
+            "Rent2": 390,
+            "Rent3": 900,
+            "Rent4": 1100,
+            "Rent5": 1275
+        },
+        {
+            "Name": "North Carolina Avenue",
+            "Text": "$300",
+            "Color": "#FFFF00",
+            "Price": 300,
+            "GroupNumber": 9,
+            "Baserent": 26,
+            "Rent1": 130,
+            "Rent2": 390,
+            "Rent3": 900,
+            "Rent4": 1100,
+            "Rent5": 1275
+        },
+        {
+            "Name": "Community Chest",
+            "Text": "FOLLOW INSTRUCTIONS ON TOP CARD",
+            "Color": "#FFFFFF"
+        },
+        {
+            "Name": "Pennsylvania Avenue",
+            "Text": "$320",
+            "Color": "#008000",
+            "Price": 320,
+            "GroupNumber": 9,
+            "Baserent": 28,
+            "Rent1": 150,
+            "Rent2": 450,
+            "Rent3": 1000,
+            "Rent4": 1200,
+            "Rent5": 1400
+        },
+        {
+            "Name": "Short Line",
+            "Text": "$200",
+            "Color": "#FFFFFF",
+            "Price": 200,
+            "GroupNumber": 1
+        },
+        {
+            "Name": "Chance",
+            "Text": "FOLLOW INSTRUCTIONS ON TOP CARD",
+            "Color": "#FFFFFF"
+        },
+        {
+            "Name": "Park Place",
+            "Text": "$350",
+            "Color": "#0000FF",
+            "Price": 350,
+            "GroupNumber": 10,
+            "Baserent": 35,
+            "Rent1": 175,
+            "Rent2": 500,
+            "Rent3": 1100,
+            "Rent4": 1300,
+            "Rent5": 1500
+        },
+        {
+            "Name": "Luxury Tax",
+            "Text": "Pay $200",
+            "Color": "#FFFFFF"
+        },
+        {
+            "Name": "Boardwalk",
+            "Text": "$400",
+            "Color": "#0000FF",
+            "Price": 400,
+            "GroupNumber": 10,
+            "Baserent": 50,
+            "Rent1": 200,
+            "Rent2": 600,
+            "Rent3": 1400,
+            "Rent4": 1700,
+            "Rent5": 2000
+        }
+    ]
+}

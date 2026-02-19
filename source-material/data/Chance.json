@@ -1,0 +1,67 @@
+{
+    "Chance": [{
+            "Text": "Get out of Jail, Free. This card may be kept until needed or sold.",
+            "Action": "function(p) { p.communityChestJailCard = true; updateOwned(); }"
+        },
+        {
+            "Text": "Make General Repairs on All Your Property. For each house pay $25. For each hotel $100.",
+            "Action": "function() { streetrepairs(25, 100);}"
+        },
+        {
+            "Text": "Speeding fine $15.",
+            "Action": "function() { subtractamount(15, 'Chance'); }"
+        },
+        {
+            "Text": "You have been elected chairman of the board. Pay each player $50.",
+            "Action": "function() { payeachplayer(50, 'Chance');}"
+        },
+        {
+            "Text": "Go back three spaces.",
+            "Action": "function() { gobackthreespaces();}"
+        },
+        {
+            "Text": "ADVANCE TO THE NEAREST UTILITY. IF UNOWNED, you may buy it from the Bank. IF OWNED, throw dice and pay owner a total ten times the amount thrown.",
+            "Action": "function() { advanceToNearestUtility();}"
+        },
+        {
+            "Text": "Bank pays you dividend of $50.",
+            "Action": "function() { addamount(50, 'Chance'); }"
+        },
+        {
+            "Text": "ADVANCE TO THE NEAREST RAILROAD. If UNOWNED, you may buy it from the Bank. If OWNED, pay owner twice the rental to which they are otherwise entitled.",
+            "Action": "function() { advanceToNearestRailroad();}"
+        },
+        {
+            "Text": "Pay poor tax of $15.",
+            "Action": "function() { subtractamount(15, 'Chance');}"
+        },
+        {
+            "Text": "Take a trip to Reading Rail Road. If you pass \"GO\" collect $200.",
+            "Action": "function() { advance(5);}"
+        },
+        {
+            "Text": "ADVANCE to Boardwalk.",
+            "Action": "function() { advance(39);}"
+        },
+        {
+            "Text": "ADVANCE to Illinois Avenue. If you pass \"GO\" collect $200.",
+            "Action": "function() { advance(24);}"
+        },
+        {
+            "Text": "Your building loan matures. Collect $150.",
+            "Action": "function() { addamount(150, 'Chance');}"
+        },
+        {
+            "Text": "ADVANCE TO THE NEAREST RAILROAD. If UNOWNED, you may buy it from the Bank. If OWNED, pay owner twice the rental to which they are otherwise entitled.",
+            "Action": "function() { advanceToNearestRailroad();}"
+        },
+        {
+            "Text": "ADVANCE to St. Charles Place. If you pass \"GO\" collect $200.",
+            "Action": "function() { advance(11);}"
+        },
+        {
+            "Text": "Go to Jail. Go directly to Jail. Do not pass \"GO\". Do not collect $200.",
+            "Action": "function() { gotojail(); }"
+        }
+    ]
+}

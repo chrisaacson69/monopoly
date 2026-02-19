@@ -1,0 +1,35 @@
+# Python
+__pycache__/
+*.py[codz]
+*$py.class
+*.egg-info/
+dist/
+build/
+.venv/
+venv/
+env/
+env1/
+.env
+
+# C# build artifacts
+bin/
+obj/
+
+# IDE / Editor
+.vs/
+.vscode/
+*.suo
+*.user
+*.pyproj
+*.sln
+*.sln.docstates
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Claude Code
+.claude/
+
+# JS simulation results (generated data)
+reference/simulation/ga-results/

@@ -1,0 +1,67 @@
+{
+    "CommunityChest": [{
+            "Text": "Get out of Jail, Free. This card may be kept until needed or sold.",
+            "Action": "function(p) { p.communityChestJailCard = true; updateOwned(); }"
+        },
+        {
+            "Text": "You have won second prize in a beauty contest. Collect $10.",
+            "Action": "function() { addamount(10, 'Community Chest'); }"
+        },
+        {
+            "Text": "From sale of stock, you get $50.",
+            "Action": "function() { addamount(50, 'Community Chest'); }"
+        },
+        {
+            "Text": "Life insurance matures. Collect $100.",
+            "Action": "function() { addamount(100, 'Community Chest'); }"
+        },
+        {
+            "Text": "Income tax refund. Collect $20.",
+            "Action": "function() { addamount(20, 'Community Chest'); }"
+        },
+        {
+            "Text": "Holiday fund matures. Receive $100.",
+            "Action": "function() { addamount(100, 'Community Chest'); }"
+        },
+        {
+            "Text": "You inherit $100.",
+            "Action": "function() { addamount(100, 'Community Chest'); }"
+        },
+        {
+            "Text": "Receive $25 consultancy fee.",
+            "Action": "function() { addamount(25, 'Community Chest'); }"
+        },
+        {
+            "Text": "Pay hospital fees of $100.",
+            "Action": "function() { subtractamount(100, 'Community Chest'); }"
+        },
+        {
+            "Text": "Bank error in your favor. Collect $200.",
+            "Action": "function() { addamount(200, 'Community Chest'); }"
+        },
+        {
+            "Text": "Pay school fees of $50.",
+            "Action": "function() { subtractamount(50, 'Community Chest'); }"
+        },
+        {
+            "Text": "Doctor's fee. Pay $50.",
+            "Action": "function() { subtractamount(50, 'Community Chest'); }"
+        },
+        {
+            "Text": "It is your birthday. Collect $10 from every player.",
+            "Action": "function() { collectfromeachplayer(10, 'Community Chest'); }"
+        },
+        {
+            "Text": "Advance to \"GO\" (Collect $200).",
+            "Action": "function() { advance(0); }"
+        },
+        {
+            "Text": "You are assessed for street repairs. $40 per house. $115 per hotel.",
+            "Action": "function() { streetrepairs(40, 115); }"
+        },
+        {
+            "Text": "Go to Jail. Go directly to Jail. Do not pass \"GO\". Do not collect $200.",
+            "Action": "function() { gotojail(); }"
+        }
+    ]
+}

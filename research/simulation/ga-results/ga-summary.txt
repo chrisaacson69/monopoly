@@ -1,0 +1,39 @@
+
+GENETIC ALGORITHM OPTIMIZATION SUMMARY
+======================================
+
+Run Time: 361.2 minutes
+Generations Completed: 150
+Best Win Rate: 40.0%
+
+BEST PARAMETERS:
+  sellerShareThreshold          :   0.30 (default: 0.35, -0.05)
+  mutualTradeRatio              :   0.86 (default: 0.8, +0.06)
+  leaderPenaltyMultiplier       :   1.80 (default: 1.5, +0.30)
+  dominanceThreshold            :   1.61 (default: 1.5, +0.11)
+  dominancePenaltyMultiplier    :   2.30 (default: 2, +0.30)
+  underdogBonus                 :   0.65 (default: 0.8, -0.15)
+  projectionHorizon             :     62 (default: 50, +12)
+  discountRate                  :  0.015 (default: 0.02, -0.005)
+
+FITNESS HISTORY:
+  Gen 130: best=32.5%, avg=22.8%
+  Gen 131: best=33.8%, avg=24.4%
+  Gen 132: best=33.8%, avg=23.6%
+  Gen 133: best=32.5%, avg=23.3%
+  Gen 134: best=31.3%, avg=22.3%
+  Gen 135: best=30.0%, avg=21.7%
+  Gen 136: best=36.3%, avg=23.0%
+  Gen 137: best=37.5%, avg=23.9%
+  Gen 138: best=32.5%, avg=22.2%
+  Gen 139: best=35.0%, avg=23.7%
+  Gen 140: best=32.5%, avg=22.6%
+  Gen 141: best=31.3%, avg=23.3%
+  Gen 142: best=37.5%, avg=23.9%
+  Gen 143: best=33.8%, avg=23.5%
+  Gen 144: best=32.5%, avg=23.4%
+  Gen 145: best=35.0%, avg=24.2%
+  Gen 146: best=31.3%, avg=23.3%
+  Gen 147: best=32.5%, avg=23.4%
+  Gen 148: best=36.3%, avg=23.1%
+  Gen 149: best=32.5%, avg=23.3%

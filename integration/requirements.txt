@@ -1,0 +1,10 @@
+# Richup.io Strategic Bot Dependencies
+
+# Browser automation
+selenium>=4.15.0
+
+# Environment variables
+python-dotenv>=1.0.0
+
+# Logging and utilities
+colorama>=0.4.6  # Colored console output (optional)

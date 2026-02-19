@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Monopoly Markov Engine Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background: #f5f5f5;
+        }
+        h1, h2, h3 {
+            color: #333;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 20px 0;
+            background: white;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #4a7c4e;
+            color: white;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+        .probability {
+            font-family: monospace;
+            text-align: right;
+        }
+        .high {
+            background-color: #c8e6c9 !important;
+        }
+        .medium {
+            background-color: #fff9c4 !important;
+        }
+        .low {
+            background-color: #ffcdd2 !important;
+        }
+        .controls {
+            margin: 20px 0;
+            padding: 15px;
+            background: white;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        button {
+            padding: 10px 20px;
+            margin: 5px;
+            cursor: pointer;
+            background: #4a7c4e;
+            color: white;
+            border: none;
+            border-radius: 4px;
+        }
+        button:hover {
+            background: #3d6640;
+        }
+        #output {
+            background: #263238;
+            color: #aed581;
+            padding: 15px;
+            font-family: monospace;
+            white-space: pre-wrap;
+            max-height: 400px;
+            overflow-y: auto;
+            margin-top: 20px;
+        }
+        .comparison-table {
+            font-size: 12px;
+        }
+        .comparison-table td {
+            padding: 4px 8px;
+        }
+        .diff-small {
+            color: green;
+        }
+        .diff-medium {
+            color: orange;
+        }
+        .diff-large {
+            color: red;
+        }
+        .color-brown { background-color: #8B4513 !important; color: white; }
+        .color-lightblue { background-color: #87CEEB !important; }
+        .color-pink { background-color: #FF69B4 !important; }
+        .color-orange { background-color: #FFA500 !important; }
+        .color-red { background-color: #FF0000 !important; color: white; }
+        .color-yellow { background-color: #FFFF00 !important; }
+        .color-green { background-color: #008000 !important; color: white; }
+        .color-darkblue { background-color: #00008B !important; color: white; }
+        .color-railroad { background-color: #333 !important; color: white; }
+        .color-utility { background-color: #ccc !important; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Monopoly Markov Chain Probability Analysis</h1>
+        <p>Testing the analytical Markov chain implementation against published probability values.</p>
+
+        <div class="controls">
+            <button onclick="runTest()">Run Probability Analysis</button>
+            <button onclick="compareWithPublished()">Compare with Published Values</button>
+            <button onclick="showEPTAnalysis()">Show EPT Analysis</button>
+            <button onclick="showGroupRankings()">Show Group Rankings</button>
+        </div>
+
+        <div id="results"></div>
+        <div id="output"></div>
+    </div>
+
+    <script src="markov-engine.js"></script>
+    <script src="property-valuator.js"></script>
+
+    <script>
+        // Published probabilities from various sources (Durango Bill, etc.)
+        // These are approximate values for "stay in jail" strategy
+        const PUBLISHED_PROBABILITIES = {
+            0: 0.0309,   // GO
+            1: 0.0215,   // Mediterranean
+            2: 0.0183,   // Community Chest (after redirects)
+            3: 0.0218,   // Baltic
+            4: 0.0235,   // Income Tax
+            5: 0.0290,   // Reading Railroad
+            6: 0.0228,   // Oriental
+            7: 0.0086,   // Chance (after redirects)
+            8: 0.0243,   // Vermont
+            9: 0.0243,   // Connecticut
+            10: 0.0589,  // Jail (highest!)
+            11: 0.0271,  // St. Charles
+            12: 0.0264,  // Electric Company
+            13: 0.0236,  // States
+            14: 0.0252,  // Virginia
+            15: 0.0287,  // Pennsylvania RR
+            16: 0.0278,  // St. James
+            17: 0.0268,  // Community Chest
+            18: 0.0297,  // Tennessee
+            19: 0.0311,  // New York
+            20: 0.0289,  // Free Parking
+            21: 0.0275,  // Kentucky
+            22: 0.0107,  // Chance
+            23: 0.0274,  // Indiana
+            24: 0.0318,  // Illinois (highest property!)
+            25: 0.0305,  // B&O Railroad
+            26: 0.0268,  // Atlantic
+            27: 0.0263,  // Ventnor
+            28: 0.0279,  // Water Works
+            29: 0.0260,  // Marvin Gardens
+            30: 0.0000,  // Go to Jail (never end here)
+            31: 0.0269,  // Pacific
+            32: 0.0263,  // North Carolina
+            33: 0.0248,  // Community Chest
+            34: 0.0256,  // Pennsylvania Ave
+            35: 0.0236,  // Short Line
+            36: 0.0093,  // Chance
+            37: 0.0224,  // Park Place
+            38: 0.0214,  // Luxury Tax
+            39: 0.0265   // Boardwalk
+        };
+
+        let markov = null;
+        let valuator = null;
+
+        function log(text) {
+            document.getElementById('output').textContent += text + '\n';
+        }
+
+        function clearLog() {
+            document.getElementById('output').textContent = '';
+        }
+
+        function runTest() {
+            clearLog();
+            document.getElementById('results').innerHTML = '';
+
+            log('Initializing Markov Engine...');
+
+            markov = new MonopolyMarkov.MarkovEngine();
+            markov.initialize();
+
+            log('Computing probabilities...\n');
+
+            // Verify transition matrix is stochastic
+            log('Verifying transition matrix (rows should sum to 1):');
+            const valid = markov.verifyMatrix();
+            log(valid ? '✓ Matrix is valid (all rows sum to 1)' : '✗ Matrix validation failed');
+            log('');
+
+            // Get probabilities for both strategies
+            const probStay = markov.getAllProbabilities('stay');
+            const probLeave = markov.getAllProbabilities('leave');
+
+            // Verify probabilities sum to 1
+            const sumStay = probStay.reduce((a, b) => a + b, 0);
+            const sumLeave = probLeave.reduce((a, b) => a + b, 0);
+            log(`Probability sum (stay): ${sumStay.toFixed(6)}`);
+            log(`Probability sum (leave): ${sumLeave.toFixed(6)}`);
+            log('');
+
+            // Build results table
+            let html = '<h2>Landing Probabilities</h2>';
+            html += '<table><tr><th>#</th><th>Square</th><th>Stay in Jail %</th><th>Leave Jail %</th></tr>';
+
+            const sorted = markov.getProbabilitiesSorted('stay');
+
+            for (const item of sorted) {
+                const stayPct = (probStay[item.square] * 100).toFixed(3);
+                const leavePct = (probLeave[item.square] * 100).toFixed(3);
+
+                let rowClass = '';
+                if (probStay[item.square] > 0.03) rowClass = 'high';
+                else if (probStay[item.square] > 0.025) rowClass = 'medium';
+                else if (probStay[item.square] < 0.015) rowClass = 'low';
+
+                html += `<tr class="${rowClass}">`;
+                html += `<td>${item.square}</td>`;
+                html += `<td>${item.name}</td>`;
+                html += `<td class="probability">${stayPct}%</td>`;
+                html += `<td class="probability">${leavePct}%</td>`;
+                html += '</tr>';
+            }
+
+            html += '</table>';
+            document.getElementById('results').innerHTML = html;
+
+            log('Analysis complete!');
+            log('\nTop 5 most landed squares:');
+            for (let i = 0; i < 5; i++) {
+                log(`  ${i+1}. ${sorted[i].name}: ${(sorted[i].probability * 100).toFixed(3)}%`);
+            }
+        }
+
+        function compareWithPublished() {
+            clearLog();
+
+            if (!markov) {
+                markov = new MonopolyMarkov.MarkovEngine();
+                markov.initialize();
+            }
+
+            const probStay = markov.getAllProbabilities('stay');
+
+            log('Comparing calculated probabilities with published values...\n');
+            log('Square                      Calculated  Published   Diff      Status');
+            log('─'.repeat(75));
+
+            let totalAbsDiff = 0;
+            let maxDiff = 0;
+            let maxDiffSquare = '';
+
+            for (let i = 0; i < 40; i++) {
+                const name = MonopolyMarkov.getSquareName(i).padEnd(25);
+                const calc = probStay[i];
+                const pub = PUBLISHED_PROBABILITIES[i];
+                const diff = calc - pub;
+                const absDiff = Math.abs(diff);
+
+                totalAbsDiff += absDiff;
+                if (absDiff > maxDiff && i !== 30) {  // Exclude Go-to-Jail
+                    maxDiff = absDiff;
+                    maxDiffSquare = MonopolyMarkov.getSquareName(i);
+                }
+
+                const calcStr = (calc * 100).toFixed(3).padStart(7);
+                const pubStr = (pub * 100).toFixed(3).padStart(7);
+                const diffStr = (diff * 100).toFixed(4).padStart(8);
+
+                let status = '';
+                if (absDiff < 0.002) status = '✓ Good';
+                else if (absDiff < 0.005) status = '~ Acceptable';
+                else status = '✗ Review';
+
+                log(`${name} ${calcStr}%   ${pubStr}%   ${diffStr}%   ${status}`);
+            }
+
+            log('─'.repeat(75));
+            log(`\nTotal absolute difference: ${(totalAbsDiff * 100).toFixed(4)}%`);
+            log(`Average absolute difference: ${((totalAbsDiff / 40) * 100).toFixed(4)}%`);
+            log(`Maximum difference: ${(maxDiff * 100).toFixed(4)}% (${maxDiffSquare})`);
+
+            // Build comparison table
+            let html = '<h2>Probability Comparison</h2>';
+            html += '<table class="comparison-table"><tr>';
+            html += '<th>#</th><th>Square</th><th>Calculated</th><th>Published</th><th>Difference</th></tr>';
+
+            for (let i = 0; i < 40; i++) {
+                const calc = probStay[i];
+                const pub = PUBLISHED_PROBABILITIES[i];
+                const diff = calc - pub;
+                const absDiff = Math.abs(diff);
+
+                let diffClass = 'diff-small';
+                if (absDiff >= 0.005) diffClass = 'diff-large';
+                else if (absDiff >= 0.002) diffClass = 'diff-medium';
+
+                html += '<tr>';
+                html += `<td>${i}</td>`;
+                html += `<td>${MonopolyMarkov.getSquareName(i)}</td>`;
+                html += `<td>${(calc * 100).toFixed(3)}%</td>`;
+                html += `<td>${(pub * 100).toFixed(3)}%</td>`;
+                html += `<td class="${diffClass}">${(diff * 100).toFixed(4)}%</td>`;
+                html += '</tr>';
+            }
+
+            html += '</table>';
+            document.getElementById('results').innerHTML = html;
+        }
+
+        function showEPTAnalysis() {
+            clearLog();
+
+            if (!markov) {
+                markov = new MonopolyMarkov.MarkovEngine();
+                markov.initialize();
+            }
+
+            if (!valuator) {
+                valuator = new PropertyValuator.Valuator(markov);
+                valuator.initialize();
+            }
+
+            const tables = valuator.getTables('stay');
+            const bestInvestments = valuator.getBestHouseInvestments('stay');
+
+            log('EPT (Earnings Per Turn) Analysis\n');
+            log('Assumes 3 opponents (multiply by opponent count for actual EPT)\n');
+
+            log('Top 10 House Investments by Marginal ROI:');
+            log('─'.repeat(70));
+            log('Property                 Houses  Cost    EPT Increase  Marginal ROI');
+            log('─'.repeat(70));
+
+            for (let i = 0; i < 10 && i < bestInvestments.length; i++) {
+                const inv = bestInvestments[i];
+                const name = inv.name.padEnd(24);
+                const houses = `${inv.fromHouses}→${inv.toHouses}`.padStart(5);
+                const cost = ('$' + inv.cost).padStart(6);
+                const eptInc = ('$' + inv.eptIncrease.toFixed(3)).padStart(10);
+                const roi = (inv.marginalROI * 100).toFixed(4) + '%';
+
+                log(`${name} ${houses}  ${cost}  ${eptInc}      ${roi}`);
+            }
+
+            // Build EPT table
+            let html = '<h2>EPT by Development Level</h2>';
+            html += '<table><tr><th>Property</th><th>Prob %</th><th>Base EPT</th>';
+            html += '<th>Monopoly</th><th>1 House</th><th>2 Houses</th>';
+            html += '<th>3 Houses</th><th>4 Houses</th><th>Hotel</th></tr>';
+
+            for (const [sq, data] of Object.entries(tables.properties)) {
+                const colorClass = getColorClass(data.group);
+                html += `<tr class="${colorClass}">`;
+                html += `<td>${data.name}</td>`;
+                html += `<td>${(data.probability * 100).toFixed(2)}%</td>`;
+                html += `<td>$${data.ept.noMonopoly.toFixed(3)}</td>`;
+                html += `<td>$${data.ept.monopoly.toFixed(3)}</td>`;
+                html += `<td>$${data.ept.house1.toFixed(3)}</td>`;
+                html += `<td>$${data.ept.house2.toFixed(3)}</td>`;
+                html += `<td>$${data.ept.house3.toFixed(3)}</td>`;
+                html += `<td>$${data.ept.house4.toFixed(3)}</td>`;
+                html += `<td>$${data.ept.hotel.toFixed(3)}</td>`;
+                html += '</tr>';
+            }
+
+            html += '</table>';
+            document.getElementById('results').innerHTML = html;
+        }
+
+        function showGroupRankings() {
+            clearLog();
+
+            if (!markov) {
+                markov = new MonopolyMarkov.MarkovEngine();
+                markov.initialize();
+            }
+
+            if (!valuator) {
+                valuator = new PropertyValuator.Valuator(markov);
+                valuator.initialize();
+            }
+
+            log('Color Group Rankings by ROI at Various Development Levels\n');
+
+            const levels = [0, 1, 2, 3, 4, 5];
+            const levelNames = ['Monopoly', '1 House', '2 Houses', '3 Houses', '4 Houses', 'Hotel'];
+
+            let html = '<h2>Group Rankings by Development</h2>';
+
+            for (let level = 0; level <= 5; level++) {
+                const rankings = valuator.getGroupRankings(level, 'stay');
+
+                html += `<h3>${levelNames[level]}</h3>`;
+                html += '<table><tr><th>Rank</th><th>Group</th><th>Total EPT</th>';
+                html += '<th>Investment</th><th>ROI</th><th>Payback (turns)</th></tr>';
+
+                rankings.forEach((r, i) => {
+                    const colorClass = getColorClass(r.group);
+                    html += `<tr class="${colorClass}">`;
+                    html += `<td>${i + 1}</td>`;
+                    html += `<td>${r.group}</td>`;
+                    html += `<td>$${r.ept.toFixed(3)}</td>`;
+                    html += `<td>$${r.investment}</td>`;
+                    html += `<td>${(r.roi * 100).toFixed(4)}%</td>`;
+                    html += `<td>${r.paybackTurns.toFixed(1)}</td>`;
+                    html += '</tr>';
+                });
+
+                html += '</table>';
+
+                log(`\n${levelNames[level]} Rankings:`);
+                rankings.forEach((r, i) => {
+                    log(`  ${i+1}. ${r.group.padEnd(12)} ROI: ${(r.roi * 100).toFixed(4)}%  Payback: ${r.paybackTurns.toFixed(1)} turns`);
+                });
+            }
+
+            document.getElementById('results').innerHTML = html;
+        }
+
+        function getColorClass(group) {
+            const classes = {
+                'brown': 'color-brown',
+                'lightBlue': 'color-lightblue',
+                'pink': 'color-pink',
+                'orange': 'color-orange',
+                'red': 'color-red',
+                'yellow': 'color-yellow',
+                'green': 'color-green',
+                'darkBlue': 'color-darkblue'
+            };
+            return classes[group] || '';
+        }
+
+        // Auto-run on page load
+        window.onload = function() {
+            log('Monopoly Markov Engine Test Page');
+            log('Click a button above to run analysis.');
+        };
+    </script>
+</body>
+</html>
