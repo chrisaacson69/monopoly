@@ -370,8 +370,8 @@ class RelativeGrowthAI extends TradingAI {
             const myEPT = computeEPT(me, myOpponents);
             const theirEPT = computeEPT(them, theirOpponents);
 
-            me.cash += DICE_EPT + myEPT - theirEPT;
-            them.cash += DICE_EPT + theirEPT - myEPT;
+            me.cash += DICE_EPT + myEPT - theirEPT / myOpponents;
+            them.cash += DICE_EPT + theirEPT - myEPT / theirOpponents;
 
             // Liquidation: sell houses at 50% when cash negative
             if (me.cash < 0) {

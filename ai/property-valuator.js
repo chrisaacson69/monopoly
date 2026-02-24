@@ -1,11 +1,11 @@
 /**
  * Monopoly Property Valuator
  *
- * Computes Earnings Per Turn (EPT) and ROI for all properties based on
+ * Computes Earnings Per Ply (EPT) and ROI for all properties based on
  * Markov chain landing probabilities.
  *
  * Key concepts:
- * - EPT = P(landing) × rent
+ * - EPT = P(landing) × rent  (per-ply: one opponent's move; × opponents for round-level)
  * - ROI = EPT / total_investment
  * - Payback Period = total_investment / EPT (turns to recoup investment)
  *

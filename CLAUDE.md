@@ -59,8 +59,10 @@ Key features:
 - Two jail strategies: "Long Stay" (try doubles) vs "Short Stay" (pay $50)
 
 ### Property Valuator (`property-valuator.js`)
-Calculates Earnings Per Turn (EPT) for all properties:
-- **EPT = P(landing) × rent × opponents**
+Calculates Earnings Per Ply (EPT) for all properties:
+- **Base EPT = P(landing) × rent** (per-ply: one opponent's move). Charts are player-count-independent.
+- **Round EPT = base EPT × opponents** (converts ply→round where needed, e.g. bilateral models)
+- **Total round income = diceEPT + (plyEPT × opponents)** — dice fires once (your ply), rent fires N times (each opponent's ply)
 - Supports all development levels: Own, Monopoly (2x rent), 1-4 Houses, Hotel
 - Marginal ROI calculations for house investments
 - Group rankings by ROI
