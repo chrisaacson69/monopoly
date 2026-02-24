@@ -55,6 +55,9 @@ class EnhancedRelativeAI extends RelativeGrowthAI {
             // Whether to mortgage to fund bids
             mortgageForBids: config.mortgageForBids ?? true,
 
+            // Whether to mortgage singletons to fund house building
+            mortgageForBuilds: config.mortgageForBuilds ?? false,
+
             // Cash threshold to trigger unmortgaging (as multiple of unmortgage cost)
             unmortgageThreshold: config.unmortgageThreshold ?? 2.0,
         };
@@ -597,6 +600,137 @@ class EnhancedRelativeAI extends RelativeGrowthAI {
         }
 
         return bidAmount;
+    }
+
+    /**
+     * Override: after normal ROI-based building, attempt mortgage-funded builds.
+     * Mortgages singletons to fund profitable house construction on monopolies.
+     */
+    buildOptimalHouses(state) {
+        // Phase 1: Normal building (exhausts cash down to reserve)
+        super.buildOptimalHouses(state);
+
+        // Phase 2: Mortgage-funded building
+        if (!this.auctionConfig.mortgageForBuilds) return;
+        this.mortgageFundedBuilds(state);
+    }
+
+    /**
+     * Mortgage singletons to fund house building when net EPT is positive.
+     *
+     * Safety: respects getAvailableDebtCapacity (30% ratio, $600 cap),
+     * absoluteMinCash ($75), and requires gainedEPT > lostEPT.
+     */
+    mortgageFundedBuilds(state) {
+        const monopolies = this.getMyMonopolies(state);
+        if (monopolies.length === 0) return;
+
+        const opponents = state.players.filter(p =>
+            p.id !== this.player.id && !p.bankrupt
+        ).length;
+        if (opponents === 0) return;
+
+        let keepGoing = true;
+        while (keepGoing) {
+            keepGoing = false;
+
+            // Find best available build by marginal ROI
+            const reserve = this.getMinReserve(state);
+            let bestROI = 0;
+            let bestTarget = null;
+            let bestEPTGain = 0;
+            let bestHousePrice = 0;
+
+            for (const group of monopolies) {
+                const groupSquares = COLOR_GROUPS[group].squares;
+                const housePrice = BOARD[groupSquares[0]].housePrice;
+
+                for (const sq of groupSquares) {
+                    const houses = state.propertyStates[sq].houses || 0;
+                    if (houses >= 5) continue;
+
+                    // Even building rule
+                    const minInGroup = Math.min(...groupSquares.map(s =>
+                        state.propertyStates[s].houses || 0
+                    ));
+                    if (houses > minInGroup) continue;
+
+                    // House availability
+                    if (houses < 4 && state.housesAvailable <= 0) continue;
+                    if (houses === 4 && state.hotelsAvailable <= 0) continue;
+
+                    const marginalROI = this.calculateMarginalROI(sq, houses, state);
+                    if (marginalROI > bestROI) {
+                        bestROI = marginalROI;
+                        bestTarget = sq;
+                        bestHousePrice = housePrice;
+
+                        // Compute EPT gain for this build
+                        const prob = this.probs[sq];
+                        const currentRent = houses === 0
+                            ? BOARD[sq].rent[0] * 2
+                            : BOARD[sq].rent[houses];
+                        const newRent = BOARD[sq].rent[houses + 1];
+                        bestEPTGain = prob * (newRent - currentRent) * opponents;
+                    }
+                }
+            }
+
+            // No profitable build found
+            if (bestTarget === null || bestROI <= 0.001) break;
+
+            // Can already afford it normally? Let normal loop handle it (shouldn't happen
+            // since super.buildOptimalHouses already ran, but guard anyway)
+            if (this.player.money - bestHousePrice >= reserve) break;
+
+            // Check debt capacity
+            const debtCapacity = this.getAvailableDebtCapacity(state);
+            if (debtCapacity <= 0) break;
+
+            // Find cheapest mortgageable property
+            const mortgageable = this.getMortgageableProperties(state);
+            if (mortgageable.length === 0) break;
+
+            const bestMortgage = mortgageable[0];  // Already sorted: non-monopoly first, lowest value
+
+            // Would mortgaging exceed debt capacity?
+            if (bestMortgage.mortgageValue > debtCapacity) break;
+
+            // Compute EPT lost from mortgaging
+            let lostEPT = 0;
+            if (this.probs) {
+                const mSq = BOARD[bestMortgage.position];
+                const prob = this.probs[bestMortgage.position];
+
+                if (mSq.rent) {
+                    // Street property — base rent only (no houses since mortgageable)
+                    lostEPT = prob * mSq.rent[0] * opponents;
+                } else if ([5, 15, 25, 35].includes(bestMortgage.position)) {
+                    // Railroad — losing one drops rent tier
+                    const rrCount = this.player.getRailroadCount
+                        ? this.player.getRailroadCount() : 1;
+                    const currentRent = RAILROAD_RENT[rrCount] || 25;
+                    const newRent = RAILROAD_RENT[Math.max(1, rrCount - 1)] || 25;
+                    lostEPT = prob * (currentRent - newRent) * opponents;
+                }
+                // Utilities: negligible, skip
+            }
+
+            // Net EPT must be positive
+            if (bestEPTGain <= lostEPT) break;
+
+            // Check we'll maintain minimum cash after mortgage + build
+            const cashAfter = this.player.money + bestMortgage.mortgageValue - bestHousePrice;
+            if (cashAfter < this.auctionConfig.absoluteMinCash) break;
+
+            // Execute: mortgage then build
+            const mortgageResult = this.engine.mortgageProperty(this.player, bestMortgage.position);
+            if (mortgageResult > 0) {
+                if (this.engine.buildHouse(this.player, bestTarget)) {
+                    keepGoing = true;  // Try another
+                }
+            }
+        }
     }
 
     /**
