@@ -3,8 +3,8 @@
  * Run with: node test-markov.js
  */
 
-const MonopolyMarkov = require('./markov-engine.js');
-const PropertyValuator = require('./property-valuator.js');
+const MonopolyMarkov = require('../ai/markov-engine.js');
+const PropertyValuator = require('../ai/property-valuator.js');
 
 // Published probabilities from various sources (Durango Bill, etc.)
 // These are approximate values for "stay in jail" strategy

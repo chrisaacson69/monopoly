@@ -836,8 +836,8 @@ class FormationAnalysisRunner {
         this.valuator = null;
 
         try {
-            const { MarkovEngine } = require('../markov-engine.js');
-            const PropertyValuator = require('../property-valuator.js');
+            const { MarkovEngine } = require('../../ai/markov-engine.js');
+            const PropertyValuator = require('../../ai/property-valuator.js');
 
             if (MarkovEngine) {
                 console.log('Initializing Markov engine...');

@@ -12,8 +12,8 @@ const { NPVTradingAI } = require('./npv-trading-ai.js');
 
 let MarkovEngine, PropertyValuator;
 try {
-    MarkovEngine = require('../markov-engine.js').MarkovEngine;
-    PropertyValuator = require('../property-valuator.js');
+    MarkovEngine = require('../../ai/markov-engine.js').MarkovEngine;
+    PropertyValuator = require('../../ai/property-valuator.js');
 } catch (e) {
     console.error('Markov engine required');
     process.exit(1);

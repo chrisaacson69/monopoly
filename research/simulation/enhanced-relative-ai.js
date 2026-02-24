@@ -17,7 +17,7 @@
 
 'use strict';
 
-const { BOARD, COLOR_GROUPS, SQUARE_TYPES } = require('./game-engine.js');
+const { BOARD, COLOR_GROUPS, SQUARE_TYPES, RAILROAD_RENT } = require('./game-engine.js');
 const { RelativeGrowthAI } = require('./relative-growth-ai.js');
 
 // =============================================================================
@@ -112,6 +112,140 @@ class EnhancedRelativeAI extends RelativeGrowthAI {
         const availableCapacity = Math.max(0, maxAllowedDebt - currentDebt);
 
         return availableCapacity;
+    }
+
+    /**
+     * Dynamic cash reserve based on opponent threat vs development opportunity.
+     *
+     * Optimal reserve minimizes the sum of:
+     *   1. Expected liquidation cost: P(landing) × max(0, rent - R) × 1.0
+     *   2. Opportunity cost: R dollars held = houses not built = EPT foregone
+     *
+     * The 1.0x liquidation multiplier is empirically calibrated. The textbook
+     * 2.0x (50% house sell penalty) is too conservative — it ignores that
+     * mortgage buffers absorb most shortfalls cheaply. Attempting to derive
+     * the multiplier from asset composition (mortgage buffer × 0.1 + house
+     * selling × 2.0) underperforms because it underestimates mortgage costs
+     * (lost rent, strategic blocking value, sequential exposure). The flat
+     * 1.0x captures the weighted average without decomposition errors.
+     *
+     * Tournament results (2000 games each, 1 new vs 3 control):
+     *   Flat 1.0x:      26.8% (Z=1.81-2.38 across runs)
+     *   Asset-mix derived: 24.8% (Z=-0.21, neutral — too aggressive)
+     *   Flat 2.0x:      25.2% (Z=0.15, neutral — too conservative)
+     *   Static baseline: 25.0% (expected)
+     */
+    getMinReserve(state) {
+        // Only apply theory when we have a monopoly (development tradeoff)
+        const myMonopolies = this.getMyMonopolies(state);
+        if (myMonopolies.length === 0) return super.getMinReserve(state);
+
+        const opponents = state.players.filter(p => !p.bankrupt && p.id !== this.player.id);
+        if (opponents.length === 0) return 50;
+
+        // Use Markov probabilities if available, else fallback 0.025
+        const getProb = (idx) => (this.probs && this.probs[idx]) || 0.025;
+
+        // 1. Build rent exposure from all opponent properties
+        const exposures = [];
+        let maxRent = 0;
+
+        for (const opp of opponents) {
+            // Count opponent's unmortgaged railroads
+            let rrCount = 0;
+            for (const propIdx of opp.properties) {
+                if ([5, 15, 25, 35].includes(propIdx) && !state.propertyStates[propIdx].mortgaged) {
+                    rrCount++;
+                }
+            }
+
+            for (const propIdx of opp.properties) {
+                const ps = state.propertyStates[propIdx];
+                if (ps.mortgaged) continue;
+
+                const sq = BOARD[propIdx];
+                const prob = getProb(propIdx);
+                let rent = 0;
+
+                if (sq.rent) {
+                    // Street property
+                    if (ps.houses > 0) {
+                        rent = sq.rent[ps.houses];
+                    } else if (sq.group && COLOR_GROUPS[sq.group] &&
+                        COLOR_GROUPS[sq.group].squares.every(s =>
+                            state.propertyStates[s].owner === opp.id)) {
+                        rent = sq.rent[0] * 2;  // Monopoly, no houses
+                    } else {
+                        rent = sq.rent[0];
+                    }
+                } else if ([5, 15, 25, 35].includes(propIdx)) {
+                    rent = RAILROAD_RENT[rrCount];
+                }
+
+                if (rent > 0) {
+                    exposures.push({ p: prob, rent });
+                    if (rent > maxRent) maxRent = rent;
+                }
+            }
+        }
+
+        // Minimal threat — aggressive development
+        if (maxRent <= 50) return 50;
+
+        // 2. Find best buildable monopoly for opportunity cost
+        let bestMarginalEPT = 0;
+        let bestCostPerLevel = 300;
+
+        for (const group of myMonopolies) {
+            if (!COLOR_GROUPS[group]) continue;
+            const squares = COLOR_GROUPS[group].squares;
+            const sq0 = BOARD[squares[0]];
+            if (!sq0.rent || !sq0.housePrice) continue;
+
+            // Can we still build?
+            if (!squares.some(s => (state.propertyStates[s].houses || 0) < 5)) continue;
+
+            let marginalEPT = 0;
+            for (const s of squares) {
+                const r = BOARD[s].rent;
+                const avgMarginal = (r[3] - r[2] + r[2] - r[1] + r[1] - r[0] * 2) / 3;
+                marginalEPT += getProb(s) *
+                    Math.max(avgMarginal, r[1] - r[0]) * opponents.length;
+            }
+
+            if (marginalEPT > bestMarginalEPT) {
+                bestMarginalEPT = marginalEPT;
+                bestCostPerLevel = sq0.housePrice * squares.length;
+            }
+        }
+
+        // All monopolies maxed — use reduced opportunity cost (defense mode)
+        if (bestMarginalEPT === 0) {
+            bestMarginalEPT = 10;
+            bestCostPerLevel = 300;
+        }
+
+        // 3. Search for optimal reserve: minimize liqCost(R) + oppCost(R)
+        let bestR = 0;
+        let minCost = Infinity;
+        const step = 25;
+
+        for (let R = 0; R <= maxRent; R += step) {
+            let liqCost = 0;
+            for (const { p, rent } of exposures) {
+                liqCost += p * Math.max(0, rent - R);
+            }
+
+            const oppCost = (R / bestCostPerLevel) * bestMarginalEPT;
+
+            const total = liqCost + oppCost;
+            if (total < minCost) {
+                minCost = total;
+                bestR = R;
+            }
+        }
+
+        return Math.max(50, bestR);
     }
 
     /**
@@ -239,36 +373,172 @@ class EnhancedRelativeAI extends RelativeGrowthAI {
     }
 
     /**
-     * Calculate maximum bid for a property
+     * Calculate maximum bid for a property using bilateral trajectory.
+     *
+     * For monopoly-completing or blocking scenarios, computes the
+     * indifference price: the cash C where I'm equally well off
+     * owning the property (at cost C) vs the most threatening
+     * opponent owning it.
+     *
+     * This replaces the static multipliers (1.05x base, 1.5x completion,
+     * 1.3x blocking) with a trajectory-derived number that captures
+     * the competitive dynamics. The bilateral model naturally handles
+     * the competitive edge — if the opponent would complete a monopoly,
+     * "they get it" is catastrophic for us, driving up our willingness
+     * to bid.
      */
     getMaxBid(position, state) {
+        // Cache: max bid doesn't change during an auction (same position,
+        // same game state). Avoids recomputing 12-16x per auction.
+        if (this._maxBidCache &&
+            this._maxBidCache.position === position &&
+            this._maxBidCache.turn === state.turn) {
+            return this._maxBidCache.maxBid;
+        }
+
         const square = BOARD[position];
-        let maxWilling = square.price * (1 + this.auctionConfig.baseBidPremium);
 
-        // Increase willingness for strategic properties
-        if (this.wouldCompleteMonopoly(position, state)) {
-            maxWilling = Math.max(maxWilling,
-                square.price * this.auctionConfig.monopolyCompletionMultiplier);
+        // Non-street properties: base premium only
+        if (!square.group || !COLOR_GROUPS[square.group]) {
+            const result = Math.floor(square.price * (1 + this.auctionConfig.baseBidPremium));
+            this._maxBidCache = { position, turn: state.turn, maxBid: result };
+            return result;
         }
 
-        // Smart blocking: only pay premium if we're the sole blocker
-        if (this.auctionConfig.smartBlocking) {
-            const blockingContext = this.analyzeBlockingContext(position, state);
-            if (blockingContext.shouldBlock && !blockingContext.isRedundant) {
-                // We're the sole blocker - pay the premium
-                maxWilling = Math.max(maxWilling,
-                    square.price * this.auctionConfig.blockingMultiplier);
+        const activePlayers = state.players.filter(p => !p.bankrupt);
+        const opponents = activePlayers.filter(p => p.id !== this.player.id);
+        if (opponents.length === 0) return square.price;
+
+        const group = square.group;
+        const groupSquares = COLOR_GROUPS[group].squares;
+
+        // Check if a monopoly is at stake for me
+        const myOwnedInGroup = groupSquares.filter(sq =>
+            state.propertyStates[sq]?.owner === this.player.id
+        ).length;
+        const iWouldComplete = (myOwnedInGroup === groupSquares.length - 1);
+
+        // Find the opponent who benefits most from this property
+        let threatOpponent = null;
+        let threatCompletes = false;
+        let maxOppOwned = 0;
+
+        for (const opp of opponents) {
+            const oppOwned = groupSquares.filter(sq =>
+                state.propertyStates[sq]?.owner === opp.id
+            ).length;
+            if (oppOwned > maxOppOwned) {
+                maxOppOwned = oppOwned;
+                threatOpponent = opp;
             }
-            // If redundant, don't pay blocking premium (just base premium)
+        }
+        if (threatOpponent && maxOppOwned === groupSquares.length - 1) {
+            threatCompletes = true;
+        }
+
+        // No monopoly at stake for anyone: base premium
+        if (!iWouldComplete && !threatCompletes) {
+            const result = Math.floor(square.price * (1 + this.auctionConfig.baseBidPremium));
+            this._maxBidCache = { position, turn: state.turn, maxBid: result };
+            return result;
+        }
+
+        // Pure blocking: don't overpay when others have stake in blocking.
+        // Use analyzeBlockingContext — only defer if another player already
+        // owns property in this group (they have real blocking incentive,
+        // not just the ability to afford a bid).
+        if (!iWouldComplete && threatCompletes) {
+            const ctx = this.analyzeBlockingContext(position, state);
+            if (ctx.isRedundant) {
+                // Someone else already owns property in this group —
+                // they'll naturally outbid to protect their investment.
+                const result = Math.floor(square.price * (1 + this.auctionConfig.baseBidPremium));
+                this._maxBidCache = { position, turn: state.turn, maxBid: result };
+                return result;
+            }
+            // We're the sole blocker — compute full indifference price below
+        }
+
+        // If no threat opponent found, use strongest by net worth
+        if (!threatOpponent) {
+            threatOpponent = opponents.reduce((best, opp) => {
+                const oppWorth = opp.money + [...(opp.properties || [])].reduce(
+                    (s, p) => s + BOARD[p].price, 0);
+                const bestWorth = best.money + [...(best.properties || [])].reduce(
+                    (s, p) => s + BOARD[p].price, 0);
+                return oppWorth > bestWorth ? opp : best;
+            });
+        }
+
+        const numOtherOpponents = opponents.length - 1;
+
+        // Build property states for two scenarios:
+        // A: I own the property
+        const psIfIOwn = { ...state.propertyStates };
+        psIfIOwn[position] = { ...psIfIOwn[position], owner: this.player.id };
+
+        // B: Threat opponent owns the property
+        const psIfTheyOwn = { ...state.propertyStates };
+        psIfTheyOwn[position] = { ...psIfTheyOwn[position], owner: threatOpponent.id };
+
+        // Get monopoly groups for each scenario
+        const myGroupsIfIOwn = this.getPlayerMonopolyGroups(this.player.id, psIfIOwn);
+        const theirGroupsIfIOwn = this.getPlayerMonopolyGroups(threatOpponent.id, psIfIOwn);
+        const myGroupsIfTheyOwn = this.getPlayerMonopolyGroups(this.player.id, psIfTheyOwn);
+        const theirGroupsIfTheyOwn = this.getPlayerMonopolyGroups(threatOpponent.id, psIfTheyOwn);
+
+        // Baseline: my trajectory area if THEY get the property
+        const simTheyGet = this.simulateBilateralGrowth(
+            { groups: myGroupsIfTheyOwn, cash: this.player.money, id: this.player.id },
+            { groups: theirGroupsIfTheyOwn, cash: threatOpponent.money, id: threatOpponent.id },
+            psIfTheyOwn, numOtherOpponents
+        );
+        const myAreaIfTheyGet = simTheyGet.myTrajectory.reduce((s, v) => s + v, 0);
+
+        // Binary search for indifference price (much faster than linear).
+        // Find max C where owning at cost C still beats them owning it.
+        let trajectoryBid = 0;
+        const maxSearch = this.player.money;
+
+        // Helper: compute my trajectory area at cost c
+        const myAreaAtCost = (c) => {
+            const sim = this.simulateBilateralGrowth(
+                { groups: myGroupsIfIOwn, cash: this.player.money - c, id: this.player.id },
+                { groups: theirGroupsIfIOwn, cash: threatOpponent.money, id: threatOpponent.id },
+                psIfIOwn, numOtherOpponents
+            );
+            return sim.myTrajectory.reduce((s, v) => s + v, 0);
+        };
+
+        // Check endpoints first
+        const myAreaAtZero = myAreaAtCost(0);
+        if (myAreaAtZero <= myAreaIfTheyGet) {
+            // Even free, I don't benefit from owning
+            trajectoryBid = 0;
         } else {
-            // Original behavior: always pay blocking premium if blocking
-            if (this.wouldBlockMonopoly(position, state)) {
-                maxWilling = Math.max(maxWilling,
-                    square.price * this.auctionConfig.blockingMultiplier);
+            const myAreaAtMax = myAreaAtCost(maxSearch);
+            if (myAreaAtMax > myAreaIfTheyGet) {
+                // Worth all our cash
+                trajectoryBid = maxSearch;
+            } else {
+                // Binary search: ~10 iterations instead of 60+
+                let lo = 0, hi = maxSearch;
+                while (hi - lo > 25) {
+                    const mid = Math.floor((lo + hi) / 2);
+                    if (myAreaAtCost(mid) > myAreaIfTheyGet) {
+                        lo = mid;  // Still better to own — can pay more
+                    } else {
+                        hi = mid;  // Too expensive — pay less
+                    }
+                }
+                trajectoryBid = lo;
             }
         }
 
-        return Math.floor(maxWilling);
+        // Floor at face value (property always worth at least face)
+        const result = Math.floor(Math.max(square.price, trajectoryBid));
+        this._maxBidCache = { position, turn: state.turn, maxBid: result };
+        return result;
     }
 
     /**

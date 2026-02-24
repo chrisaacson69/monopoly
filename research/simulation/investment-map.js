@@ -18,8 +18,8 @@
 
 'use strict';
 
-const { MarkovEngine } = require('../markov-engine.js');
-const PropertyValuator = require('../property-valuator.js');
+const { MarkovEngine } = require('../../ai/markov-engine.js');
+const PropertyValuator = require('../../ai/property-valuator.js');
 
 class InvestmentMapGenerator {
     constructor() {

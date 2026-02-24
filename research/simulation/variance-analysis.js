@@ -20,7 +20,7 @@ const { BOARD, COLOR_GROUPS } = require('./game-engine.js');
 // Try to load Markov engine
 let MarkovEngine;
 try {
-    MarkovEngine = require('../markov-engine.js').MarkovEngine;
+    MarkovEngine = require('../../ai/markov-engine.js').MarkovEngine;
 } catch (e) {
     console.log('Note: Markov engine not available');
 }

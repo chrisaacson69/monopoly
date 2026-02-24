@@ -12,8 +12,8 @@
  *   - Split across both?
  */
 
-const MonopolyMarkov = require('./markov-engine.js');
-const PropertyValuator = require('./property-valuator.js');
+const MonopolyMarkov = require('../ai/markov-engine.js');
+const PropertyValuator = require('../ai/property-valuator.js');
 
 // Initialize engines
 console.log('================================================================================');

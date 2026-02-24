@@ -10,7 +10,7 @@ const { TradingAI } = require('./trading-ai.js');
 
 let MarkovEngine;
 try {
-    MarkovEngine = require('../markov-engine.js').MarkovEngine;
+    MarkovEngine = require('../../ai/markov-engine.js').MarkovEngine;
 } catch (e) {
     console.error('Markov engine required');
     process.exit(1);

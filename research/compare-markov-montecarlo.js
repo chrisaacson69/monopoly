@@ -5,7 +5,7 @@
  * simulation using the same rules.
  */
 
-const MonopolyMarkov = require('./markov-engine.js');
+const MonopolyMarkov = require('../ai/markov-engine.js');
 const MonteCarloSim = require('./monte-carlo-sim.js');
 
 console.log('================================================================================');

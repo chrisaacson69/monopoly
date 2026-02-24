@@ -2,7 +2,7 @@
  * Test Roll EPT Calculator
  */
 
-const MonopolyMarkov = require('./markov-engine.js');
+const MonopolyMarkov = require('../ai/markov-engine.js');
 const RollEPTCalculator = require('./roll-ept-calculator.js');
 
 // Initialize Markov engine

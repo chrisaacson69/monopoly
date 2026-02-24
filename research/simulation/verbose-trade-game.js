@@ -9,8 +9,8 @@ const { TradingAI } = require('./trading-ai.js');
 
 let MarkovEngine, PropertyValuator;
 try {
-    MarkovEngine = require('../markov-engine.js').MarkovEngine;
-    PropertyValuator = require('../property-valuator.js');
+    MarkovEngine = require('../../ai/markov-engine.js').MarkovEngine;
+    PropertyValuator = require('../../ai/property-valuator.js');
 } catch (e) {}
 
 let markovEngine = null;

@@ -18,7 +18,7 @@
  * - Income Tax depends on net worth
  */
 
-const MonopolyMarkov = require('./markov-engine.js');
+const MonopolyMarkov = require('../ai/markov-engine.js');
 
 const RollEPTCalculator = (function() {
     'use strict';

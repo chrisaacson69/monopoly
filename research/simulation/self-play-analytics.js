@@ -21,8 +21,8 @@ const { RelativeGrowthAI } = require('./relative-growth-ai.js');
 // Try to load Markov engine
 let MarkovEngine, PropertyValuator;
 try {
-    MarkovEngine = require('../markov-engine.js').MarkovEngine;
-    PropertyValuator = require('../property-valuator.js');
+    MarkovEngine = require('../../ai/markov-engine.js').MarkovEngine;
+    PropertyValuator = require('../../ai/property-valuator.js');
 } catch (e) {
     console.log('Note: Markov engine not available');
 }

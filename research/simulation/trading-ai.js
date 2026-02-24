@@ -142,23 +142,11 @@ class TradingAI extends StrategicAI {
 
             // If both sides gain, it's a good trade
             if (myGain > 0 && theirGain > 0) {
-                // Determine cash differential based on relative gains
-                let cashDiff = 0;
-
-                // If their gain is significantly higher, they should pay us
-                // If our gain is significantly higher, we should pay them
-                const gainRatio = myGain / (myGain + theirGain);
-
-                // Calculate property values being exchanged
-                const myPropValue = needed.reduce((sum, sq) => sum + BOARD[sq].price, 0);
-                const theirPropValue = canOffer.reduce((sum, sq) => sum + BOARD[sq].price, 0);
-
-                // Base cash on property value difference, adjusted by gain ratio
-                cashDiff = Math.floor((myPropValue - theirPropValue) * gainRatio);
-
-                // Limit cash offer
-                const maxCash = Math.floor(this.player.money * this.maxCashOffer);
-                cashDiff = Math.max(-maxCash, Math.min(maxCash, cashDiff));
+                // Calculate cash differential using overridable method
+                let cashDiff = this.calculateMutualTradeCash(
+                    group, theirNeed.group, myGain, theirGain,
+                    needed, canOffer, state
+                );
 
                 // Check if we can afford it
                 if (cashDiff > 0 && this.player.money < cashDiff) continue;
@@ -229,6 +217,22 @@ class TradingAI extends StrategicAI {
         }
 
         return Math.min(offer, maxOffer);
+    }
+
+    /**
+     * Calculate cash differential for a mutual monopoly trade.
+     * Positive = proposer pays. Negative = proposer receives.
+     *
+     * Base implementation uses static EPT gain ratio and face value difference.
+     * Override in subclasses for growth-curve-aware pricing.
+     */
+    calculateMutualTradeCash(myGroup, theirGroup, myGain, theirGain, propsGained, propsGiven, state) {
+        const gainRatio = myGain / (myGain + theirGain);
+        const myPropValue = propsGained.reduce((sum, sq) => sum + BOARD[sq].price, 0);
+        const theirPropValue = propsGiven.reduce((sum, sq) => sum + BOARD[sq].price, 0);
+        let cashDiff = Math.floor((myPropValue - theirPropValue) * gainRatio);
+        const maxCash = Math.floor(this.player.money * this.maxCashOffer);
+        return Math.max(-maxCash, Math.min(maxCash, cashDiff));
     }
 
     /**
