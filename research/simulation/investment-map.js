@@ -435,6 +435,161 @@ class InvestmentMapGenerator {
     }
 
     /**
+     * Efficient Frontier: maximum EPT achievable at each capital level.
+     *
+     * Solves the multiple-choice knapsack: 8 color groups, each with 7 states
+     * (not owned, monopoly, 1H-5H). For every budget $X, finds the portfolio
+     * that maximizes total EPT.
+     *
+     * This IS the development map — the jumps show where each dollar matters.
+     *
+     * @param {number} maxBudget - Maximum capital to evaluate
+     * @param {number} displayStep - Display granularity
+     * @returns {object} - { dp: Float64Array, getPortfolio: function }
+     */
+    generateEfficientFrontier(maxBudget = 10000, displayStep = 100) {
+        console.log('\n' + '='.repeat(90));
+        console.log('EFFICIENT FRONTIER: Maximum EPT at each investment level');
+        console.log('All EPT values are per ply (per opponent move)');
+        console.log('='.repeat(90));
+
+        const groups = Object.keys(PropertyValuator.COLOR_GROUPS);
+        const numGroups = groups.length;
+
+        // Build options for each group: [{cost, ept, label}, ...]
+        // Option 0 = not owned (cost 0, ept 0)
+        const options = [];
+        for (const group of groups) {
+            const groupOpts = [{ cost: 0, ept: 0, label: null }];
+            for (let houses = 0; houses <= 5; houses++) {
+                const data = this.calculateGroupInvestment(group, houses);
+                const label = houses === 5 ? `${group} Hotel`
+                    : houses === 0 ? `${group} Mono`
+                    : `${group} ${houses}H`;
+                groupOpts.push({ cost: data.totalInvestment, ept: data.eptPerOpponent, label });
+            }
+            options.push(groupOpts);
+        }
+
+        // Multiple-choice knapsack DP
+        // dp[b] = max EPT with budget b using groups processed so far
+        let prev = new Float64Array(maxBudget + 1);
+        const choiceArrays = [];
+
+        for (let g = 0; g < numGroups; g++) {
+            const curr = new Float64Array(maxBudget + 1);
+            const ch = new Uint8Array(maxBudget + 1); // 0 = not owned
+
+            for (let b = 0; b <= maxBudget; b++) {
+                curr[b] = prev[b];
+                ch[b] = 0;
+
+                for (let o = 1; o < options[g].length; o++) {
+                    const cost = options[g][o].cost;
+                    if (cost <= b) {
+                        const candidateEpt = prev[b - cost] + options[g][o].ept;
+                        if (candidateEpt > curr[b]) {
+                            curr[b] = candidateEpt;
+                            ch[b] = o;
+                        }
+                    }
+                }
+            }
+            prev = curr;
+            choiceArrays.push(ch);
+        }
+
+        // Backtrack to get portfolio at a given budget
+        function getPortfolio(budget) {
+            const items = [];
+            let remaining = budget;
+            for (let g = numGroups - 1; g >= 0; g--) {
+                const o = choiceArrays[g][remaining];
+                if (o > 0) {
+                    items.push(options[g][o]);
+                    remaining -= options[g][o].cost;
+                }
+            }
+            return items;
+        }
+
+        // Display
+        console.log('\n' + '-'.repeat(95));
+        console.log(
+            '  ' +
+            'Budget'.padStart(7) +
+            'Max EPT'.padStart(11) +
+            'Marginal'.padStart(10) +
+            '  Portfolio'
+        );
+        console.log('-'.repeat(95));
+
+        let lastEpt = 0;
+        let lastPortfolioStr = '';
+
+        for (let b = 0; b <= maxBudget; b += displayStep) {
+            const ept = prev[b];
+            const delta = ept - lastEpt;
+            const portfolio = getPortfolio(b);
+            const portfolioStr = portfolio.length > 0
+                ? portfolio.map(p => p.label).join(' + ')
+                : '(nothing)';
+
+            // Mark transitions where portfolio changes
+            const changed = portfolioStr !== lastPortfolioStr;
+            const marker = changed ? '>>' : '  ';
+
+            console.log(
+                marker +
+                `$${b}`.padStart(7) +
+                `$${ept.toFixed(3)}`.padStart(11) +
+                (delta > 0.001 ? `+$${delta.toFixed(3)}` : '').padStart(10) +
+                `  ${portfolioStr}`
+            );
+
+            lastEpt = ept;
+            lastPortfolioStr = portfolioStr;
+        }
+
+        // Summary: find the biggest jumps
+        console.log('\n' + '='.repeat(90));
+        console.log('KEY THRESHOLDS (biggest marginal EPT gains)');
+        console.log('='.repeat(90));
+
+        const jumps = [];
+        let prevEpt = 0;
+        let prevPortfolio = '';
+        for (let b = 1; b <= maxBudget; b++) {
+            const ept = prev[b];
+            if (ept > prevEpt + 0.001) {
+                const portfolio = getPortfolio(b);
+                const portfolioStr = portfolio.map(p => p.label).join(' + ');
+                if (portfolioStr !== prevPortfolio) {
+                    jumps.push({ budget: b, ept, delta: ept - prevEpt, portfolio: portfolioStr });
+                    prevPortfolio = portfolioStr;
+                }
+            }
+            prevEpt = ept;
+        }
+
+        // Sort by delta (biggest jumps first), show top transitions
+        jumps.sort((a, b) => b.delta - a.delta);
+        const topJumps = jumps.slice(0, 15);
+        topJumps.sort((a, b) => a.budget - b.budget);
+
+        for (const j of topJumps) {
+            console.log(
+                `  $${j.budget}`.padStart(8) +
+                `  EPT $${j.ept.toFixed(3)}`.padStart(15) +
+                `  (+$${j.delta.toFixed(3)})`.padStart(13) +
+                `  ${j.portfolio}`
+            );
+        }
+
+        return { dp: prev, getPortfolio };
+    }
+
+    /**
      * Run complete analysis
      */
     runAnalysis() {
@@ -452,7 +607,10 @@ class InvestmentMapGenerator {
         // 4. Show capital progression
         this.generateCapitalProgression(diceEPT.totalDiceEPT);
 
-        // 5. Analyze upgrade scenarios
+        // 5. Efficient frontier (the development map)
+        this.generateEfficientFrontier();
+
+        // 6. Analyze upgrade scenarios
         this.generateUpgradeAnalysis();
 
         // Summary
