@@ -603,6 +603,19 @@ class EnhancedRelativeAI extends RelativeGrowthAI {
     }
 
     /**
+     * Override: first-principles jail strategy.
+     * Leave jail while purchasable properties remain unowned (opportunity to acquire).
+     * Stay in jail once all properties are owned (avoid paying rent, no upside to moving).
+     * A/B tested: Z=1.14 (neutral), adopted for theoretical correctness.
+     */
+    decideJail(state) {
+        for (const [pos, propState] of Object.entries(state.propertyStates)) {
+            if (propState.owner === null) return true;  // unowned property exists — leave
+        }
+        return false;  // all owned — stay in jail
+    }
+
+    /**
      * Override: after normal ROI-based building, attempt mortgage-funded builds.
      * Mortgages singletons to fund profitable house construction on monopolies.
      */

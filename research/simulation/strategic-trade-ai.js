@@ -90,7 +90,10 @@ class StrategicTradeAI extends EnhancedRelativeAI {
             qualityRejectThreshold: options.qualityRejectThreshold || 1.40,
 
             // Whether to use quality filtering at all
-            enableQualityFilter: options.enableQualityFilter !== false,
+            // Disabled by default: bilateral trajectory model captures monopoly
+            // quality naturally (Green > Brown) without artificial multipliers.
+            // A/B tested: Z=1.81 (no ELO loss from removal, 3000 games).
+            enableQualityFilter: options.enableQualityFilter || false,
 
             ...options
         };
@@ -257,31 +260,33 @@ class StrategicTradeAI extends EnhancedRelativeAI {
 }
 
 // Preset configurations
+// NOTE: Quality filter disabled by default since bilateral trajectory model
+// captures monopoly quality naturally. These presets preserved for experimentation.
 const STRATEGIC_PRESETS = {
-    // Default: balanced quality filtering
+    // Default: no quality filter (bilateral model handles it)
     balanced: {
+        enableQualityFilter: false
+    },
+
+    // Legacy: original quality filtering (for comparison/regression testing)
+    legacyFilter: {
         qualityAcceptThreshold: 0.85,
         qualityRejectThreshold: 1.40,
         enableQualityFilter: true
     },
 
-    // Strict: only accept fair-or-better trades
+    // Strict: only accept fair-or-better trades (legacy)
     strict: {
         qualityAcceptThreshold: 0.95,
         qualityRejectThreshold: 1.20,
         enableQualityFilter: true
     },
 
-    // Lenient: more willing to accept worse trades
+    // Lenient: more willing to accept worse trades (legacy)
     lenient: {
         qualityAcceptThreshold: 0.70,
         qualityRejectThreshold: 1.60,
         enableQualityFilter: true
-    },
-
-    // Disabled: same as EnhancedRelativeAI
-    disabled: {
-        enableQualityFilter: false
     }
 };
 
